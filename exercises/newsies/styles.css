@@ -1,0 +1,34 @@
+body {
+    font-family: 'Times New Roman', Times, serif;
+    text-align: justify;
+}
+.header-block {
+    margin: 5%;
+    border-bottom: 12px double;
+    border-color: #111111
+}
+
+.header {
+    text-align: center;
+    font-size: 45pt;
+}
+
+.article-block {
+    margin: 5%;
+}
+
+.article-title {
+    margin-bottom: 10pt;
+}
+
+.article-content {
+    margin-top: 5pt
+}
+
+.smallcaps {
+    font-variant: small-caps;
+}
+
+.bold {
+    font-weight: bold;
+}
