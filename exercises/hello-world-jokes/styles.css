@@ -1,0 +1,40 @@
+body {
+    background-color: #5866CC;
+    color: #0D1661;
+}
+
+.title {
+    font-size: 35pt;
+    text-align: center;
+
+}
+
+.center {
+    margin: auto;
+    width: 90%;
+}
+
+.joke {
+    width: 300px;
+    border: 15px solid #CC7758;
+    padding: 50px;
+    margin: 20px;
+    background-color: #FFDEC7;
+    border-radius: 20px;
+}
+
+.image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 130px;
+
+}
+
+/* 
+Colors:
+    #5866CC - background
+    #0D1661 - text
+    #86D5FF
+    #FFDEC7 - sub background
+    #CC7758 - sub border
+*/
