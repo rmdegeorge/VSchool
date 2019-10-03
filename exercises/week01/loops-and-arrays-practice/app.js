@@ -4,7 +4,7 @@ var officeItems = ["stapler", "monitor", "computer", "desk", "lamp", "computer",
 var count = 0
 for (let i = 0; i < officeItems.length; i++) {
     if (officeItems[i] === "computer") {
-        count += 1;
+        count += 1; //count = count + 1
     }
 
 }
@@ -43,6 +43,23 @@ for (let i = 0; i < peopleWhoWantToSeeMadMaxFuryRoad.length; i++) {
     }
 }
 
+for (let i = 0; i < peopleWhoWantToSeeMadMaxFuryRoad.length; i++) {
+    if (peopleWhoWantToSeeMadMaxFuryRoad[i].age >= 18) {
+        console.log("is old enough";
+    } else {
+        console.log("is not old enough");
+    }
+}
+
+for (let i = 0; i < peopleWhoWantToSeeMadMaxFuryRoad.length; i++) {
+    if (peopleWhoWantToSeeMadMaxFuryRoad[i].age >= 18) {
+        console.log(peopleWhoWantToSeeMadMaxFuryRoad[i].name + "is old enough, don't let " + pronoun(i) + ".");
+    } else {
+        console.log(peopleWhoWantToSeeMadMaxFuryRoad[i].name + " is not old enough, don't let " + pronoun(i) + ".");
+    }
+}
+
+
 // Bonus #1
 console.log("\n\nBonus #1\n")
 console.log("See Results Above... Already completed")
@@ -78,3 +95,40 @@ var array3 = [9, 3, 4, 2]
 console.log(`Sample array 1:  ${isLightOn(array1)}`)
 console.log(`Sample array 2:  ${isLightOn(array2)}`)
 console.log(`Sample array 3:  ${isLightOn(array3)}`)
+
+
+
+
+/*
+Console Output:
+
+#1
+
+There are 4 computers
+
+
+#2
+
+Mike is not old enough, don't let HIM.
+Madeline is old enough, don't let HER.
+Cheryl is old enough, don't let HER.
+Sam is old enough, don't let HIM.
+Suzy is not old enough, don't let HER.
+
+
+Bonus #1
+
+See Results Above... Already completed
+
+
+Bonus #2
+
+See Results Above... Already completed
+
+
+Bonus Challenge
+
+Sample array 1:  The light is on.
+Sample array 2:  The light is on.
+Sample array 3:  The light is off.
+*/
