@@ -10,6 +10,13 @@ if ("cat".length === 3) {
 };
 
 "cat" === "dog" ? console.log("is the same") : console.log("not the same");
+/*
+if ("cat" === "dog") {
+    console.log("is the same");
+} else {
+    console.log("not the same");
+}
+*/
 
 // Bronze Medal
 console.log("\n\nBronze Medal\n");
