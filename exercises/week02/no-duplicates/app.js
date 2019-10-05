@@ -4,6 +4,8 @@ const myString3 = "aaaabbcdddeeffghhijjjjklllmnoooop"
 
 
 //--------------------------------------------------
+const removeDuplicateChars = string => {return findUniqueChars(string).join("")};
+
 function findUniqueChars(string) {
     let chars = [string[0]];
     for (let i = 0; i < string.length; i++) {
@@ -14,7 +16,6 @@ function findUniqueChars(string) {
     return chars;
 }
 // "fat arrow" function that joins the array returned in findUniqueChars as a single string
-const removeDuplicateChars = string => {return findUniqueChars(string).join("")};
 console.log(removeDuplicateChars(myString3));
 
 
@@ -45,6 +46,13 @@ console.log(scrambleString(myString))
 
 
 //--------------------------------------------------
+
+function removeVowels(input) {
+    let indexLog = findIndexOfVowels(input);
+    let newString = replaceVowels(input,indexLog);
+    let finalString = removePlaceholders(newString,indexLog.length);
+    return finalString;
+}
 function findIndexOfVowels(input){
     let indexLog = []
     // loop through input and log index of vowels
@@ -70,14 +78,6 @@ function removePlaceholders(input,length) {
         input = input.replace("~~replaceMe~~", "");
     }
     return input;
-}
-
-function removeVowels(input) {
-    let indexLog = findIndexOfVowels(input);
-    let newString = replaceVowels(input,indexLog);
-    let finalString = removePlaceholders(newString,indexLog.length);
-    return finalString;
-
 }
 console.log(removeVowels(myString));
 /*
