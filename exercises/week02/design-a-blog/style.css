@@ -1,0 +1,20 @@
+.header {
+    display: inline-block;
+    position: fixed;
+}
+.title {
+
+}
+.navbar-main {
+    background-color: #54559669;
+    position: fixed;
+}
+.navbar .navbar-link {
+    display: inline-block;
+
+}
+.content {
+    display: inline-block;
+    position: absolute;
+    top: 200px;
+}
