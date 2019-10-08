@@ -1,0 +1,195 @@
+* {
+    display: inline-block;
+    box-sizing: border-box;
+    font-size: 0px;
+}
+.container {
+    background-color: #1b3780;
+    width: 400px;
+    height: 700px;
+    position: relative;
+    top: 40px;
+    left: 40px;
+    border-radius: 5px 5px 15px 15px;
+}
+.screen-border {
+    background-color: rgb(96,112,111);
+    width: 330px;
+    height: 60px;
+    position: relative;
+    top:30px;
+    left: 35px;
+}
+.screen {
+    background-color: rgb(95,108,98);
+    width: 320px;
+    height: 50px;
+    position: relative;
+    top: 5px;
+    left: 5px;
+    border-radius: 5px;
+    box-shadow: -2px -2px #464e48;
+}
+#display {
+    width: 300px;
+    height: 40px;
+    position: absolute;
+    top: 5px;
+    left: 10px;
+    text-align: right;
+    padding-top: 7px;
+    color: black;
+    font-size: 20pt;
+}
+.brand {
+    width: 220px;
+    height: 25px;
+    position: absolute;
+    top: 110px;
+    left: 15px;
+    font-size: 15pt;
+    color: white;
+}
+.model{
+    width: 22150px;
+    height: 40px;
+    position: absolute;
+    top: 110px;
+    left: 250px;
+    font-size: 35pt;
+    color: white;
+}
+.solar-cell {
+    position: absolute;
+    width:150px;
+    height: 75px;
+    border: 1px solid black;
+    top: 150px;
+    left: 25px;
+}
+.cell {
+    width:37px;
+    height: 75px;
+    border: 1px solid black;
+    background-color: rgb(29,17,11);
+}
+.button-border{
+    border: 2px solid rgb(7,22,65);
+    width: 380px;
+    height: 400px;
+    position: relative;
+    top: 200px;
+    left: 10px;
+    border-radius: 7px;
+}
+.button {
+    width: 85px;
+    height: 55px;
+    position: absolute;
+    box-shadow: 5px 3px rgb(9,13,24);
+    border-radius: 6px;
+    font-size: 24pt;
+    text-align: center;
+}
+.num {
+    background-color: rgb(233,232,227);
+    color: rgb(20,23,104);
+}
+.operator {
+    background-color: rgb(173,10,15);
+    color: rgb(254,244,253);
+}
+#equals {
+    height: 115px;
+    top: 275px;
+    left: 285px;
+}
+#add {
+    top: 215px;
+    left: 285px;
+}
+#subtract {
+    top: 155px;
+    left: 285px;
+}
+#multiply {
+    top: 95px;
+    left: 285px;
+}
+#divide {
+    top: 35px;
+    left: 285px;
+}
+#clear{
+    top: 335px;
+    left: 5px;
+    font-size: 20pt;
+}
+#one {
+    top: 275px;
+    left: 5px;
+}
+#two {
+    top: 275px;
+    left: 95px;
+}
+#three {
+    top: 275px;
+    left: 185px;
+}
+#four {
+    top: 215px;
+    left: 5px;
+}
+#five {
+    top: 215px;
+    left: 95px;
+}
+#six {
+    top: 215px;
+    left: 185px;
+}
+#seven {
+    top: 155px;
+    left: 5px;
+}
+#eight {
+    top: 155px;
+    left: 95px;
+}
+#nine {
+    top: 155px;
+    left: 185px;
+}
+#zero {
+    top:335px;
+    left: 95px;
+}
+#decimal {
+    top: 335px;
+    left: 185px;
+}
+#m-plus {
+    top: 95px;
+    left: 185px;
+}
+#m-minus {
+    top: 95px;
+    left: 95px;
+}
+#mrc {
+    top: 95px;
+    left: 5px;
+}
+#sqrt {
+    top: 35px;
+    left: 95px;
+}
+#modulus {
+    top: 35px;
+    left: 185px;
+}
+#negative {
+    top: 35px;
+    left: 5px;
+}

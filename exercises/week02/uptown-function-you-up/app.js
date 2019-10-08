@@ -10,7 +10,7 @@ const lyrics = ["This", "hit", "that", "ice", "cold",
 
 const sing = input => input.join(" ");
 function reverse(input) {
-    let array = input;
+    let array = [...input];
     return array.reverse().join(" ");
 } 
 function everyOtherWordString(input, start) {  // i = the starting index
