@@ -1,0 +1,14 @@
+header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.title {
+
+}
+.navbar {
+    display: flex;
+}
+.navbar > div {
+    flex: 1;
+}

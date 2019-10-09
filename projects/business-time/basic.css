@@ -1,0 +1,27 @@
+html, body {
+    background-color: #ffffff;
+    font-size: 10pt;
+    font-family:Helvetica,Arial,sans-serif;
+    color: #181818;
+    background-color:#daf3c6;
+    height: 100%;
+}
+.header {
+    background-color: #ffffff;
+}
+.title {
+    text-align: center;
+    padding: 10px;
+    border-bottom: 1px solid #000000;
+}
+.navbar > div {
+    padding: 10px;
+    text-align: center;
+    font-size: 12pt;
+    vertical-align: middle;
+    border: 1px solid #000000;
+    white-space: nowrap;
+}
+.container {
+    text-align: center;
+}

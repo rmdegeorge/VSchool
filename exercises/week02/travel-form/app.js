@@ -4,7 +4,7 @@ const lastName = form.lastName;
 const age = form.age;
 const gender = form.gender;
 const destination = form.destination;
-const diet = document.querySelectorAll("input[name=diet]:checked.value");
+
 const button = form.submit;
 
 form.addEventListener("submit", function() {
