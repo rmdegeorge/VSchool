@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Travel Form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <form name="travelForm">
+        <input type="text" id="first-name" name="firstName" placeholder="First Name"><br>
+        <input type="text" id="last-name" name="lastName" placeholder="Last Name"><br>
+        <input type="number" id="age" name="age" placeholder="Age"><br>
+        <input type="radio" name="gender" value="Male">Male<br>
+        <input type="radio" name="gender" value="Female">Female<br>
+        <input type="radio" name="gender" value="Other">Other<br>
+        <select name="destination" id="destination">
+            <option value="" selected>**Destination**</option>
+            <option value="Denver">Denver</option>
+            <option value="Antarctica">Antarctica</option>
+            <option value="Salt Lake City">Salt Lake City</option>
+            <option value="Kansas City">Kansas City</option>
+        </select><br>
+        <input type="checkbox" name="diet" value="Vegetarian">Vegetarian<br>
+        <input type="checkbox" name="diet" value="Vegan">Vegan<br>
+        <input type="checkbox" name="diet" value="Gluten Free">Glutard<br>
+        <input type="checkbox" name="diet" value="Carnivore">Carnivor<br>
+        <input type="checkbox" name="diet" value="Omnivore">Omnivore<br>
+        <button id="submit" name="submit">Submit</button>
+    </form>
+    <script src="app.js"></script> 
+</body>
+</html>

@@ -15,14 +15,14 @@ function reverse(input) {
 } 
 function everyOtherWordString(input, start) {  // i = the starting index
     let newArray = []
-    for ( i = start; i < input.length; i += 2) {
+    for (let i = start; i < input.length; i += 2) {
         newArray.push(input[i]);
     }
     return newArray.join(" ");
 }
 function everyOtherWord(input, start) {  // i = the starting index
     let newArray = []
-    for ( i = start; i < input.length; i += 2) {
+    for (let i = start; i < input.length; i += 2) {
         newArray.push(input[i]);
     }
     return newArray;
@@ -36,11 +36,17 @@ function switchEveryTwo(input) {
             finalArray.push(newArray1[i]);
             break;
         } else {
-            finalArray.push(newArray2[i]);
-            finalArray.push(newArray1[i]);
+            finalArray.push(newArray2[i],newArray1[i]);
         }
     }
     return finalArray;
+
+
+
+
+
+
+
 }
 function randomize(input) {
     for (let i = input.length - 1; i > 0; i--) {
