@@ -20,16 +20,16 @@ document.addEventListener("scroll", (event) => {
     event.preventDefault();
     changeBGColor("orange");
 });
-document.addEventListener("keydown", function(event) {
-    if (event.which == 66) {
+document.addEventListener("keypress", function(event) {
+    if (event.key == "b") {
         changeBGColor("blue");
-    } else if (event.which == 82) {
+    } else if (event.key == "r") {
         changeBGColor("red");
-    } else if (event.which == 89) {
+    } else if (event.key == "y") {
         changeBGColor("yellow");
-    } else if (event.which == 71) {
+    } else if (event.key == "g") {
         changeBGColor("green");
-    } else if (event.which == 79) {
+    } else if (event.key == "o") {
         changeBGColor("orange");
     }
 });

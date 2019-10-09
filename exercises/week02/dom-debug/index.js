@@ -1,4 +1,4 @@
-const colors = ["red", "blue", "green"];
+const colors = ["", "red", "blue", "green"];
 
 document.getElementById("add").addEventListener("click", function(e){
     const subItem = createSubItem(e);
@@ -13,8 +13,8 @@ function createDropDown(){
         option.value = colors[i];
         dropDown.appendChild(option);
     };
-    dropDown.addEventListener("change", function(e){
-        e.target.parentElement.style.backgroundColor = e.target.value;
+    dropDown.addEventListener("click", function(e){
+        e.target.parentElement.parentElement.style.backgroundColor = e.target.value;
     });
     return dropDown;
 }

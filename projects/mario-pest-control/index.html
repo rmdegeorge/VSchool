@@ -12,23 +12,62 @@
         <h1>Mario's Pest Control</h1>
     </header>
     <div class="main-container">
-        <div>
-            <ul class="pricing">
-                Pricing:
-                <li><img class="pic" id="goombapic" src="pics/goomba.gif" />Goombas: 5 Coins</li>
-                <li><img class="pic" id="bobombpic" src="pics/bobomb.gif" />Bob-ombs: 7 Coins</li>
-                <li><img class="pic" id ="cheepcheeppic" src="pics/cheepcheep.gif" />Cheep-cheeps: 11 Coins</li>
-            </ul>
-        </div>
-        <div class="list">
-            <ul class="runningCost">
-                <li></li>
-                <li></li>
-                <li></li>
-            </ul>
+        <div class="table">
+            Mario's Kill List:
+            <table id="kill-table">
+                <tr class="titles">
+                    <th>Picture</th>
+                    <th>Baddie</th>
+                    <th>Pay/Kill</th>
+                    <th>Kill Count</th>
+                    <th>Pay Subtotal</th>
+                    <th>New Kills</th>
+                    <th></th>
+                </tr>
+                <tr class="goomba">
+                    <td><img class="pic" id="goombapic" src="pics/goomba.gif" /></td>
+                    <td>Goomba</td>
+                    <td>5 coins</td>
+                    <td><span class="kill-count" id="goomba-kill-count">0</span></td>
+                    <td><span class="pay-subtotal" id="goomba-pay">0</span> coins</td>
+                    <td><input type="number" class="kill-input" id="goomba-kill-input"></td>
+                    <td><button class="addkills" id="goomba-kill-button">Add Kills</button></td>
+                </tr>
+                <tr class="bobomb">
+                    <td><img class="pic" id="bobombpic" src="pics/bobomb.gif" /></td>
+                    <td>Bob-omb</td>
+                    <td>7 coins</td>
+                    <td><span class="kill-count"id="bobomb-kill-count">0</span></td>
+                    <td><span class="pay-subtotal" id="bobomb-pay">0</span> coins</td>
+                    <td><input type="number" class="kill-input" id="bobomb-kill-input"></td>
+                    <td><button class="addkills" id="bobomb-kill-button">Add Kills</button></td>
+                </tr>
+                <tr class="cheepcheep">
+                    <td><img class="pic" id ="cheepcheeppic" src="pics/cheepcheep.gif" /></td>
+                    <td>Cheep-cheep</td>
+                    <td>11 coins</td>
+                    <td><span class="kill-count" id="cheep-kill-count">0</span></td>
+                    <td><span class="pay-subtotal" id="cheep-pay">0</span> coins</td>
+                    <td><input type="number" class="kill-input" id="cheep-kill-input"></td>
+                    <td><button class="addkills" id="cheep-kill-button">Add Kills</button></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>Total: </td>
+                    <td><span id="total">0</span> coins</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
         </div>
     </div>
-
+    <footer>
+        Mario's Address: Somewhere in Italy
+        Mario's email: adventure.plumbing@mariobros.it
+        www.mariobros.it
+    </footer>
     <script src="app.js"></script>
 </body>
 </html>
