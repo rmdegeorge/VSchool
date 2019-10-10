@@ -26,6 +26,7 @@ let isAlive = true;
 let handInHole = false;
 let name;
 let holeOpen = false;
+let isInRoom = true;
 
 console.log("You awake dazed...........");
 wait(2000); 
@@ -47,16 +48,18 @@ console.log(`you find a heavy timber door in front of you.`);
 wait(1000);
 if (readline.keyInYN('Try to open the door?  ')) {
     console.log(`You try to open the door, but of course it's locked. Damn!`);
-    wait(1000);
+    wait(2000);
     console.log(`Perhaps there's something around here I can use to pick the lock or something.`);
+    wait(1000);
 } else {
     console.log(`The door will obviously be locked. I'll search every inch of this room... Perhaps there's something I can use.`);
+    wait(1000);
 };
 wait(1000);
-let search = ['floor', 'left wall', 'back wall', 'right wall', 'front wall'];
-while (isAlive && doorLocked) {
-    console.log(`Where would you like to search? `);
-    searchIndex = readline.keyInSelect(search);
+let search = ['floor', 'left wall', 'back wall', 'front wall', 'right wall'];
+while (isAlive && isInRoom) {
+    console.log(`\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\nWhere would you like to search? `);
+    searchIndex = readline.keyInSelect(search, null, {cancel: false});
     if (searchIndex === 0) { //search floor 
         console.log(`You get down on your hands and knees and begin to search the ${search[searchIndex]}.`);
         wait(2000);
@@ -85,7 +88,7 @@ while (isAlive && doorLocked) {
                 wait(1000);
                 if (checkInventory('nail')) {
                     wait(1000);
-                    if (readline.keyInYN(`You have a nail in your pocked! Would you like to use the nail to scrape the dirt away?`)) {
+                    if (readline.keyInYN(`You have a nail in your pocket! Would you like to use the nail to scrape the dirt away?`)) {
                         wait(1000);
                         console.log(`.....................`)
                         wait(1000);
@@ -166,26 +169,109 @@ while (isAlive && doorLocked) {
             }
         }
     } else if (searchIndex === 2) { //search back wall
-        if (/*have key*/){
-            //find nothing
+        if (hasKey){
+            wait(1000);
+            console.log(`You find nothing here but cold stone.`)
+            wait(1000);
+            console.log(`You decide to keep looking around the room.`);
+            wait(1000);
         } else {
-            //find key here
+            console.log(`As you run your hands along the wall, you feel a stone move.`);
+            if (readline.keyInYN(`Pull on loose stone?  `)) {
+                console.log(`You pulled the stone out! Behind the stone you find a KEY!!!`);
+                wait(1000);
+                console.log(`You put the key in your pocket.`)
+                wait(1000);
+                hasKey = true;
+                inventory.push('key');
+            } else {
+                console.log(`You're concerned that the wall would collapse if you pull on the stone.`);
+                wait(1000);
+                console.log(`You decide to leave it alone...`);
+                wait(1000);
+                console.log(`I think I'll keep looking around the room.`);
+                wait(1000);
+            }
         }
     } else if (searchIndex === 3) { //search front wall
         console.log(`This is where the door is.`)
+        wait(1000);
         if (readline.keyInYN('Try to open the door?  ')) {
+            wait(1000);
             if (doorLocked) {
-                // door locked
-                //
+                console.log(`The door is locked... `)
+                wait(1000);
+                if (hasKey) {
+                    //has key
+                    console.log(`You have a key in your pocket! It couldn't possibly be the key to the door, could it???`);
+                    if (readline.keyInYN(`Do you want try to unlock the door using your key? `)) {
+                        console.log(`You place the key in the lock. `);
+                        wait(1000);
+                        console.log('With a little effort the rusty lock clicks open!!!');
+                        wait(1000);
+                        doorLocked = false;
+                        if (readline.keyInYN(`Do you open the door? `)) {
+                            console.log(`You push the door open and fresh air and light pour over you!`)
+                            wait(1000);
+                            console.log(`You're free!!!!!`);
+                            console.log(`.....................................`)
+                            console.log(`.....................................`)
+                            console.log(`................YAY..................`)
+                            console.log(`..............YOU WIN................`)
+                            console.log(`.....................................`)
+                            console.log(`.....................................`)
+                            console.log(`.....................................`)
+                            isInRoom = false;
+                        } else {
+                            wait(1000);
+                            console.log(`You decide to not open the door yet and keep checking around the room before you leave.`);
+                            wait(1000);
+                            continue;
+                        }
+                        
+                    } else {
+                        console.log(`There's no way someone would lock you in a room with the key to the door.`);
+                        wait(1000);
+                        console.log(`You decide to keep searching the room.`);
+                        wait(1000);
+                        continue;
+                    }
+                } else {
+                    console.log(`The door is locked, there's no way I can get this open.`);
+                    wait(1000);
+                    console.log(`You decide to keep searching the room.`);
+                    wait(1000);
+                    continue;
+                }
             } else {
-                // door unlocked
-                // door opens
-                // escape
+                console.log(`You've already unlocked the door.`)
+                wait(1000);                
+                if (readline.keyInYN(`Do you open the door? `)) {
+                    console.log(`You push the door open and fresh air and light pour over you!`)
+                    wait(1000);
+                    console.log(`You're free!!!!!`);
+                    console.log(`.....................................`)
+                    console.log(`.....................................`)
+                    console.log(`................YAY..................`)
+                    console.log(`..............YOU WIN................`)
+                    console.log(`.....................................`)
+                    console.log(`.....................................`)
+                    console.log(`.....................................`)
+                    isInRoom = false;
+                } else {
+                    console.log(`You decide to not open the door yet and keep checking around the room before you leave.`);
+                    continue;
+                }
             }
         } else {
             console.log(`Perhaps there's something around here I can use to pick the lock or something.`);        };
     } else if (searchIndex === 4) { //search right wall
-        //find nothing here
+        wait(1000);
+        console.log(`You search the whole wall, but find nothing but cold, damp, solid stone...`);
+        wait(1000);
+        console.log(`I think I'll keep looking around the room.`);
+        wait(1000);
+
     };
      wait(2000);
 };

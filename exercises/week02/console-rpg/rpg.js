@@ -47,7 +47,7 @@ console.log("Wait... is that... ");
 console.log("OH MY GOD!!!! I'm covered in...")
 
 const coveredIn = ['fur', 'scales', 'peanut butter',]
-let index = readline.keyInSelect(coveredIn);
+let index = readline.keyInSelect(coveredIn, null, {cancel: false});
 let character = characters[index];
 character.name = name;
 
