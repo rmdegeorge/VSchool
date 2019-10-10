@@ -1,6 +1,6 @@
 //~~~~~~~INSERT HEADER~~~~~~~
 const header = document.getElementById("header");
-header.innerHTML = "<h1>JavaScript Made This</h1><h2><span class='name'>Rob</span> wrote the JavaScript</h2>"
+header.innerHTML = "<h1 class='header'>JavaScript Made This</h1><h2 class='header'><span class='name'>Rob</span> wrote the JavaScript</h2>"
 
 //~~~~~NEW MESSAGES~~~~~~~
 const messages = document.querySelector(".messages");
