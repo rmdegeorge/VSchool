@@ -1,0 +1,63 @@
+.container3 > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+    color: #000000;
+    border-radius: 5px;
+}
+
+html, body {
+  background-color: #ffffff;
+  margin: 10px;
+}
+.container3 > div:nth-child(1n) {
+  background-color: #999999;	
+}
+
+.container3 > div:nth-child(2n) {
+  background-color: #444444;
+}
+
+.container3 > div:nth-child(3n) {
+      background-color: #444444;
+}
+
+.container3 > div:nth-child(4n) {
+      background-color: #cccccc;
+}
+.container3 > div:nth-child(5n) {
+    background-color: #999999;
+}
+.container3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+    color: #000000;
+    border-radius: 5px;
+    margin: 100px 100px 10px 100px;
+    grid-gap: 7px;
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows: repeat(3,100px);
+    grid-template-areas: 
+        "h h h h"
+        "s1 c c s2"
+        "f f f f";
+}
+.header {
+    grid-area: h;
+}
+.sidebar1 {
+    grid-area: s1;
+}
+.content {
+    grid-area: c;
+}
+.sidebar2 {
+    grid-area: s2;
+}
+.footer {
+    grid-area: f;
+}
+
