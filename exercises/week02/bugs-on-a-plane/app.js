@@ -24,7 +24,7 @@ function formAlert() {
 }
 
 
-submit.addEventListener("click", function() {
+form.addEventListener("submit", function() {
     event.preventDefault();
     formAlert();
 });
