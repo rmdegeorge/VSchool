@@ -7,12 +7,11 @@ html, body {
     height: 100%;
 }
 body {
-    margin-top: 150px;
+    margin-top:200px;
 }
 a {
     color: #181818;
     text-decoration: none;
-
 }
 a:hover {
     cursor: pointer;
@@ -56,62 +55,42 @@ a:hover {
 .instagram {}
 
 
-#banner-pic {
-    max-width: 100%;
-    height: auto;
-    position: relative;
-    top: 5px;
-    
-}
 
-.why-yoga {
-    background-color: rgb(218,243,198);
+
+.page-header {
+    display: grid;
+    grid-template-columns: 100%;
+    padding: 50px;
+}
+.page-header:nth-child(1n) {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-content: center;
-    padding: 5%;
+    align-items: center;
 }
-#meditation-pic {
-    padding: 5%;
-    max-width: 100%;
-    height: auto;
+.section {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
 }
+.section > div {
+display: flex;
+justify-content: center;
+align-items: center;
 
-
-
-.meet-jasper {
+}
+.section > .content {
     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
-.meet-content {
+.content {
     padding: 5%;    
 }
-.meet-pic {
+.pic {
     
 }
 #meet-pic {
     max-width: 100%;
     height: 100%;
-}
-
-.quote {
-    box-sizing: border-box;
-    position: relative;
-}
-#quote-pic {
-    position: relative;
-    width: 100%;
-    height: auto;
-}
-#quote { 
-    font-size: 18pt;
-    color: #ffffff;
-    background-color: transparent;
-    text-align: center;
-    width: 375px;
-    height: 2em;
-    z-index: 1;
-    position: absolute;
-    top: 65%;
-    left: 30%;
 }

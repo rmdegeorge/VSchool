@@ -23,7 +23,6 @@ let inventory = []
 let hasKey = false;
 let doorLocked = true;
 let isAlive = true;
-let handInHole = false;
 let name;
 let holeOpen = false;
 let isInRoom = true;
