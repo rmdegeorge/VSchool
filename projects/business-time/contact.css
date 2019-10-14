@@ -1,0 +1,102 @@
+html, body {
+    background-color: #fcf7f4;
+    font-size: 10pt;
+    font-family: Helvetica,Arial,sans-serif;
+    color: #181818;
+    margin: 0;
+    height: 100%;
+}
+body {
+    margin-top:200px;
+}
+a {
+    color: #181818;
+    text-decoration: none;
+}
+a:hover {
+    cursor: pointer;
+}
+
+.header {
+    display: flex;
+    z-index: 1;
+    background-color: #fcf7f4;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    width: 100vw;
+}
+.title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid #000000;
+    width: 90%;
+    height: 100px;
+    margin: 15px auto auto auto;
+}
+.navbar > div {
+    padding: 10px;
+    text-align: center;
+    font-size: 12pt;
+    vertical-align: middle;
+    white-space: nowrap;
+}
+.navbar {
+    display: flex;
+    justify-content: center;
+}
+.email {}
+.home {}
+.classes {}
+.corporate-wellness {}
+.contact {}
+.instagram {}
+
+
+.section {
+    display: grid;
+    grid-template-areas: 
+        "text form";
+    width: 91%;
+}
+.contact-text {
+    grid-area: 'text';
+    display: flex;
+    width: 45%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+.contact-form {
+    grid-area: 'form';
+}
+form {
+    display: grid;
+    width:  45%;
+    grid-template-areas: 
+        "name email"
+        "phone address"
+        "subject subject"
+        "message message"
+        "message message"
+        "submit submit";
+}
+#name {
+    grid-area: "name";
+}
+#email {
+    grid-area: "email";
+}
+#phone {
+    grid-area: "phone";
+}
+#address {
+    grid-area: "address";
+}
+#message {
+    grid-area: "message";
+}
+#submit {
+    grid-area: "submit";
+}
