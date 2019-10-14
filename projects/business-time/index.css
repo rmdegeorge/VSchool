@@ -53,7 +53,9 @@ a:hover {
 .classes {}
 .corporate-wellness {}
 .contact {}
-.instagram {}
+.instagram {
+    display: none
+}
 
 
 #banner-pic {
@@ -114,4 +116,11 @@ a:hover {
     position: absolute;
     top: 65%;
     left: 30%;
+}
+
+.footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 100px;
 }
