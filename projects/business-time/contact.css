@@ -125,11 +125,14 @@ a:hover {
 
 
 .map {
+    display: flex;
     width: 90%;
     height: 400px;
+    margin: 50px auto auto auto;
 }
 #map {
-    
+    width: 100%;
+    height
 }
 
 
