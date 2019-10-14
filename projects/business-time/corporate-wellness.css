@@ -15,6 +15,10 @@ a {
 }
 a:hover {
     cursor: pointer;
+    color: #ffffff;
+    background-color: #181818;
+    border-radius: 5px;
+    padding: 1px;
 }
 
 .header {
@@ -60,7 +64,7 @@ a:hover {
 .page-header {
     display: grid;
     grid-template-columns: 100%;
-    padding: 50px;
+    padding: 10px 50px 50px 50px;
 }
 .page-header:nth-child(1n) {
     display: flex;
@@ -95,10 +99,41 @@ align-items: center;
     height: 100%;
 }
 
+.contact-link {
+    background-color: transparent;
+    border: 1px solid #181818;
+    border-radius: 20px;
+    width: 100px;
+    height: 30px;
+    text-align: center;
+    padding: 15px 0 0 0;
+}
+.contact-link:hover {
+    background-color: #181818;
+    color: #ffffff;
 
+}
 .footer {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-top: 100px;
+}
+
+@media (max-width: 725px) {
+    .navbar {
+        display: flex;
+        justify-content: center;
+    }
+    .navbar > div {
+        padding: 10px 3px 10px 3px;
+        text-align: center;
+        font-size: 12pt;
+        vertical-align: middle;
+        white-space: nowrap;
+    }
+    .email {
+        display: none;
+    }
+
 }

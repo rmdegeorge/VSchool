@@ -16,13 +16,16 @@ a {
 }
 a:hover {
     cursor: pointer;
+    color: #ffffff;
+    background-color: #181818;
+    border-radius: 5px;
+    padding: 1px;
 }
 
 .header {
     display: flex;
     z-index: 1;
     background-color: #fcf7f4;
-    /* padding: 0 5% 0 5%; */
     flex-direction: column;
     position: fixed;
     top: 0;
@@ -92,13 +95,29 @@ a:hover {
     
 }
 #meet-pic {
-    max-width: 100%;
-    height: 100%;
+    width: 100%;
+    height: auto;
+}
+
+.contact-link {
+    background-color: transparent;
+    border: 1px solid #181818;
+    border-radius: 20px;
+    width: 100px;
+    height: 30px;
+    text-align: center;
+    padding: 15px 15px 15px 15px;
+}
+.contact-link:hover {
+    background-color: #181818;
+    color: #ffffff;
+
 }
 
 .quote {
     box-sizing: border-box;
     position: relative;
+    top: -4px;
 }
 #quote-pic {
     position: relative;
@@ -123,4 +142,48 @@ a:hover {
     flex-direction: column;
     align-items: center;
     margin-top: 100px;
+}
+
+@media (max-width: 725px) {
+    .navbar {
+        display: flex;
+        justify-content: center;
+    }
+    .navbar > div {
+        padding: 10px 3px 10px 3px;
+        text-align: center;
+        font-size: 12pt;
+        vertical-align: middle;
+        white-space: nowrap;
+    }
+    .email {
+        display: none;
+    }
+
+
+    .meet-pic{
+        display: none;
+    }
+    .quote {
+        box-sizing: border-box;
+        position: relative;
+        margin-top: 10px;
+    }
+    #quote-pic {
+        position: relative;
+        width: 100%;
+        height: auto;
+    }
+    #quote { 
+        font-size: 12pt;
+        color: #ffffff;
+        background-color: transparent;
+        text-align: center;
+        width: 150px;
+        height: 2em;
+        z-index: 1;
+        position: absolute;
+        top: 65%;
+        left: 30%;
+    }
 }

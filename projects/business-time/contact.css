@@ -15,6 +15,10 @@ a {
 }
 a:hover {
     cursor: pointer;
+    color: #ffffff;
+    background-color: #181818;
+    border-radius: 5px;
+    padding: 1px;
 }
 
 .header {
@@ -132,13 +136,33 @@ a:hover {
 }
 #map {
     width: 100%;
-    height
 }
-
-
 .footer {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-top: 100px;
+}
+
+@media (max-width: 725px) {
+    .navbar {
+        display: flex;
+        justify-content: center;
+    }
+    .navbar > div {
+        padding: 10px 3px 10px 3px;
+        text-align: center;
+        font-size: 12pt;
+        vertical-align: middle;
+        white-space: nowrap;
+    }
+    .email {
+        display: none;
+    }
+    .section {
+        flex-direction: column;
+    }
+    .map {
+        height: 250px;
+    }
 }
