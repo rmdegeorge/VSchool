@@ -81,5 +81,10 @@ console.log(`I... I... I think I might be a... ${character.type.toUpperCase()}!!
 console.log(``);
 
 while (isAlive && !hasWon) {
-    
+
 }
+
+
+/*
+
+*/

@@ -10,4 +10,3 @@ function initMap() {
 
 
 
-//AIzaSyCgsaJnj4REfhIb43R8F9lZdkFX8YqhggU
