@@ -1,3 +1,17 @@
+
+// const dotenv = require('dotenv');
+// require('dotenv').config();
+// const API_KEY = process.env.GOOGLE_API_KEY;
+const mapContainer = document.getElementById('map');
+
+//insert script for map generation
+let script = document.createElement('script');
+script.async = true;
+script.defer = true;
+script.src = `https://maps.googleapis.com/maps/api/js?key=${API_KEY}&callback=initMap`;
+mapContainer.appendChild(script);
+
+
 function initMap() {
     // The location of pin
     var location = {lat: 40.745318, lng: -111.874042};
