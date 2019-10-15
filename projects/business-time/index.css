@@ -14,7 +14,7 @@ a {
     text-decoration: none;
 
 }
-a:hover {
+.navbar > div > a:hover {
     cursor: pointer;
     color: #ffffff;
     background-color: #181818;
@@ -111,7 +111,12 @@ a:hover {
 .contact-link:hover {
     background-color: #181818;
     color: #ffffff;
-
+    border: 1px solid #181818;
+    border-radius: 20px;
+    width: 100px;
+    height: 30px;
+    text-align: center;
+    padding: 15px 15px 15px 15px;
 }
 
 .quote {
