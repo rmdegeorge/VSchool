@@ -1,0 +1,106 @@
+{
+    "appetizers": [
+        {
+            "name": "Bruchetta",
+            "ingredients": [
+                "Bread",
+                "Olive Oil",
+                "Tomatoes",
+                "Basil",
+                "Mozzarella",
+                "Salt",
+                "Pepper"
+            ],
+            "description": "Bite sized crustini topped with tomato, basil, and fresh mozzarella topped with extra virgin olive oil, salt, and pepper."
+        },
+        {
+            "name": "Marinated Olives",
+            "ingredients": [
+                "Olives",
+                "Olive Oil",
+                "Proprietary Herb Blend",
+                "Salt",
+                "Bread"
+            ],
+            "description": "A bowl of delicious house cured and marinated olives, served with homemade bread."
+        }
+    ],
+    "coldSandwiches": [
+        {
+            "name": "Cold 1",
+            "ingredients": [
+                "Bread",
+                "Ingredient 2",
+                "Ingredient 3",
+                "Ingredient 4"
+            ],
+            "description": "It's a cold sandwich."
+        },
+        {
+            "name": "Cold 2",
+            "ingredients": [
+                "Bread",
+                "Ingredient 2",
+                "Ingredient 3",
+                "Ingredient 4"
+            ],
+            "description": "It's another cold sandwich."
+        }
+    ],
+    "hotSandwiches": [
+        {
+            "name": "Napoli",
+            "ingredients": [
+                "Bread",
+                "Olive Oil",
+                "Mozzarella",
+                "Tomato",
+                "Basil",
+                "Roasted Garlic"
+            ],
+            "description": "Sophisticated grilled cheese."
+        },
+        {
+            "name": "Hot 2",
+            "ingredients": [
+                "Bread",
+                "Ingredient 2",
+                "Ingredient 3",
+                "Ingredient 4"
+            ],
+            "description": "I'm running low on creative content at the moment..."
+        }
+    ],
+    "desserts": [
+        {
+            "name": "Dessert 1",
+            "ingredients": [],
+            "description": ""
+        },
+        {
+            "name": "Dessert 2",
+            "ingredients": [],
+            "description": ""
+        }
+    ],
+    "drinks": [
+        {
+            "name": "Kombucha",
+            "ingredients": [
+                "Black Tea",
+                "Sugar",
+                "Kombucha Culture"
+            ],
+            "description": "Japanese fermented tea beverage."
+        },
+        {
+            "name": "Crapel Juice",
+            "ingredients": [
+                "Cranberry",
+                "Apple",
+                "Grape"
+            ],
+            "description": "Blend of fresh Cranberry, Apple, and Grapes."
+        }
+    ]
+}
