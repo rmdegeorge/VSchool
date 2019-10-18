@@ -1,0 +1,19 @@
+.main-container {
+    width: 100%;
+}
+#list{
+    /* display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 200px 200px 200px; */
+    width: 100%;
+}
+.list-item {
+    max-width: 50%;
+    height: 300px;
+    border: 1px solid #000000;
+    padding: 15px;
+}
+.item-image {
+    width: 25%;
+    height: auto;
+}
