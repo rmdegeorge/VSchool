@@ -169,8 +169,8 @@ function removeStarIfExpired(starAcquireTime) {
         //check if time is expired
         let now = new Date().getTime()
         if (now > starAcquireTime + 30000) {
-            //if time expired 
-            console.log(`TIME EXPIRED`)
+            //if Super Star time expired 
+            console.log(`\n\n${myCharacter.name}'s Super Star Power Up has expired.\n\n`)
             myCharacter.powerUps[1] = '          ';
             //> remove super star;
         };
