@@ -8,6 +8,7 @@ let isAlive = true;
 let hasWon = false;
 let myCharacter
 let charSelect
+let starAcquireTime
 
 /****************************************************************** 
  * INTRO
@@ -36,18 +37,76 @@ while (isAlive && !hasWon) {
         console.log(`\n\nGoodbye!\n\n`)
         break;
     };
+    if (starAcquireTime !== undefined) {
+        removeStarIfExpired(starAcquireTime)
+    };
+    if (myCharacter.lives < 0) {
+        isAlive = false;
+        console.log(`That was ${myCharacter.name}'s last life.`)
+        console.log(`\n\nGAMEOVER\n\n\n`)
+    };
 };
 
-/**
- * add life if find green mushroom
- * powerups: Super Mushroom, star,
- * coins - 100 coins trade in for extra life
- */
-
-
 /****************************************************************** 
- * IN PROGRESS FUNCTIONS 
+ * FUNCTIONS 
  ******************************************************************/
+
+
+function takeHit() {
+    if (checkForPowerUp('Magic Mushroom')) {
+        console.log(`${myCharacter.name} loses his Magic Mushroom.`);
+        myCharacter.powerUps[1] = '              ';
+    } else {
+        console.log(`${myCharacter.name} loses one life.`);
+        myCharacter.lives--;
+    };
+};
+function enemyEncounter() {
+    let enemy = getRandEnemy();
+    console.log(`\n\nThere's a ${enemy}!\n\n`);
+    let action = readline.keyIn(`\n\n(a) Attack it\n(j) Jump over it\n(w) Keep walking\n\n`, {limit: 'ajw', hideEchoBack: true, mask: ""})
+    if (action === 'a') {
+        tryToAttack();
+    } else if (action === 'j') {
+        tryToEvade();
+    } else if (action === 'w') {
+        walkIntoEnemy();
+    };
+};
+function tryToAttack() {
+    console.log(`\n\n${myCharacter.name} tries an attack by jumping on its head!\n\n`);
+    let randNum = Math.floor(Math.random() * 100);
+    if (checkForPowerUp('Super Star')) {
+        console.log(`${myCharacter.name} killed it immediately because of his Super Star!`);
+    } else if (randNum < 75) {
+        console.log(`${myCharacter.name}'s attack was successful!`);
+    } else {
+        takeHit();
+    };
+};
+function tryToEvade() {
+    console.log(`\n\n${myCharacter.name} tries to evade the enemy by jumping\n\n`);
+    let randNum = Math.floor(Math.random() * 100)
+    if (randNum < 75) {
+        console.log(`${myCharacter.name} uses his superior plumber jumping abilities to get away.`);
+    } else {
+        if (checkForPowerUp('Super Star')) {
+            console.log(`${myCharacter.name} ran into the enemy, but killed it immediately because of his Super Star!`);
+        } else {
+            console.log(`${myCharacter.name} didn't get away and took a hit.`);
+            takeHit();
+        };
+    };
+};
+function walkIntoEnemy() {
+    //walk right into enemy
+    if (checkForPowerUp('Super Star')) {
+        console.log(`${myCharacter.name} killed it immediately because of his Super Star!`);
+    } else {
+        console.log(`\n\n${myCharacter.name} is a Dummy.  He walked right into it\n\n`);
+        takeHit();
+    };
+};
 function walk() {
     //check for enemy (1:4 chance of enemy appearing)
     if (isThereABox()){
@@ -58,40 +117,40 @@ function walk() {
         console.log(`\n\nNothing exciting happened...\n\n`);
     };
 };
-function addItemToCharacter(item) {
-    if (item === 'coin') {
+function addItemToCharacter(newItem) {
+    if (newItem === 'Coin') {
         //+1 to myCharacter.coins
-    } else if (item === '1-UP') {
+        //if 100+ coins trade 100 coins for +1 1-UP
+        myCharacter.coins += 5;
+        if (myCharacter.coins >= 100) {
+            myCharacter.coins -= 100;
+            myCharacter.lives++;
+            console.log(`You got 1-UP for collecting 100 Coins!`)
+        };
+    } else if (newItem === '1-UP') {
         //+1 to myCharacter.lives
+        myCharacter.lives++;
     } else {
-        //check character's powerups for new item  
-        //add new if not there yet else 
+        //check character's powerups to see if character already has new item  
+        let isFound = checkForPowerUp(newItem);
+        if (isFound === undefined) {
+            //add new if not there yet else 
+            if (newItem === 'Magic Mushroom') {
+                console.log('I ADDED A MAGIC MUSHROOM');
+                myCharacter.powerUps[0] = newItem;
+            } else if (newItem === 'Super Star') {
+                console.log('I ADDED A SUPER STAR');
+                myCharacter.powerUps[1] = newItem;
+                starAcquireTime = new Date().getTime();
+            };
+        }
     };
 };
-function enemyEncounter() {
-    let enemy = getRandEnemy();
-    console.log(`\n\nThere's a ${enemy}!\n\n`);
-    let action = readline.keyIn(`\n\n(a) Attack it\n(j) Jump over it\n(w) Keep walking\n\n`, {limit: 'ajw', hideEchoBack: true, mask: ""})
-    if (action === 'a') {
-        console.log(`\n\nYou attacked!\n\n`);
-        //********attack
-        //either get hit by enemy or kill enemy
-    } else if (action === 'j') {
-        console.log(`\n\nYou try to evade the enemy by jumping\n\n`);
-        //************try to jump over enemy
-        //either get away or get hit by enemy
-    } else if (action === 'w') {
-        console.log(`\n\nYou Dummy.  You jumped right into it\n\n`);
-        //************walk right into enemy
-        //get hit by enemy
-    };
+function checkForPowerUp(newItem) {
+    return myCharacter.powerUps.find((item) => {
+        return item === newItem;
+    });
 };
-
-/****************************************************************** 
- * FUNCTIONAL FUNCTIONS 
- ******************************************************************/
-
- 
 function boxEncounter() {
     console.log('\n\nTHERES A BOX!\n\n');
     let action = readline.keyIn(`\n\n(b) Break box\n(w) Keep walking\n\n`, {limit: 'bw', hideEchoBack: true, mask: ""});
@@ -101,7 +160,20 @@ function boxEncounter() {
         console.log(`You got a ${newItem}!`);
         addItemToCharacter(newItem);
     } else if (action === 'w'){
-        console.log(`\n\n${myCharacter} is a minimalist. Who reallyneeds all that loot anyways?\n\n`);
+        console.log(`\n\n${myCharacter.name} is a minimalist. Who reallyneeds all that loot anyways?\n\n`);
+    };
+};
+function removeStarIfExpired(starAcquireTime) {
+    if (checkForPowerUp('Super Star') === 'Super Star') {
+        //there is a super star
+        //check if time is expired
+        let now = new Date().getTime()
+        if (now > starAcquireTime + 30000) {
+            //if time expired 
+            console.log(`TIME EXPIRED`)
+            myCharacter.powerUps[1] = '          ';
+            //> remove super star;
+        };
     };
 };
 function wait(ms) {
@@ -114,6 +186,7 @@ function wait(ms) {
 function checkCharacter() {
     // SHOWS: Coins, Currnet Powerups, Number of lives
     console.log(`\n*******************************************\n**************${myCharacter.name}'s Status:**************\n**                                       **\n**  Lives: ${myCharacter.lives}                             **\n**  Coins: ${myCharacter.coins}                             **\n**  PowerUps: ${myCharacter.powerUps.join(' ')}  **\n**                                       **\n*******************************************\n*******************************************`)
+    //console.log(sprintf("  0 Padded => %010.f", 123.4567));
 };
 function getRandEnemy() {
     /**
