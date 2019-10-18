@@ -8,11 +8,12 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
     <div class="main-container">
         <h1>Rob's Axios ToDo List</h1>
-        <form action="submit" name="add-list-item">
-            <input type="text" placeholder="New ToDo Item"></input>
+        <form action="submit" name="addListItem" id="addListItem">
+            <input type="text" name="newTitle" id="newTitle" placeholder="Title">
+            <input type="text" name="newDescription" id="newDescription" placeholder="Description">
+            <input type="text" name="newImgUrl" id="newImgUrl" placeholder="Image URL">
             <button type="submit">Submit</button>
         </form>
         <div id="list"></div>
