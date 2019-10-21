@@ -24,23 +24,27 @@ function makeTodo(todo) {
     const img = document.createElement('img');
     const checkbox = document.createElement('input');
     const delBtn = document.createElement('button');
+    const editBtn = document.createElement('button');
     
     h2.textContent = todo.title;
+    h2.className = 'item-title'
     
     p.textContent = todo.description;
+    p.className = 'item-description'
     
     img.src = todo.imgUrl;
     img.className = 'item-image';
     
     checkbox.type = 'checkbox';
-
     checkbox.addEventListener('change', e => {
         let id = todo._id
         let completed;
         if (e.target.checked) {
             completed = {completed: true};
+            h2.style.textDecoration = "line-through";
         } else {
             completed = {completed: false};
+            h2.style.textDecoration = "initial"
         };
         axios.put('https://api.vschool.io/RobDeGeorge/todo/'+id, completed).then(response => {
             console.log(response.data);
@@ -49,8 +53,11 @@ function makeTodo(todo) {
         });
     })
     checkbox.checked = todo.completed;
-
-    // Toggling the Checkbox should update the api .completed => checked=true unchecked=false
+    if (todo.completed) {
+        h2.style.textDecoration = "line-through";
+    } else {
+        h2.style.textDecoration = "initial";
+    };
     
     delBtn.textContent = 'Delete';
     delBtn.addEventListener('click', function() {
@@ -58,27 +65,74 @@ function makeTodo(todo) {
         axios.delete("https://api.vschool.io/RobDeGeorge/todo/"+id).then(response => {
                 console.log(response.data);
                 //delete todo from document
-                this.parentNode.remove();
+                // this.parentNode.remove();
+                listItem.remove()
             }).catch(error => {
                     console.log(error);
                 });
     });
-            
 
+    editBtn.textContent = 'Edit';
+    editBtn.addEventListener('click', function() {
+        // const editForm = document.createElement('form');
+        const editTitle = document.createElement('input');
+        const editDescription = document.createElement('input');
+        const editImgURL = document.createElement('input');
+        const saveBtn = document.createElement('button');
 
-    if (todo.completed) {
-        h2.style.textDecoration = "line-through"
-    }
+        saveBtn.textContent = 'Save';
+        editTitle.value = h2.textContent;
+        editDescription.value = p.textContent;
+        editImgURL.value = img.src
+        
+        listItem.insertBefore(editTitle, h2.nextSibling);
+        h2.style.display = 'none';
+        listItem.insertBefore(editDescription, p.nextSibling)
+        p.style.display = 'none';
+        listItem.insertBefore(editImgURL, imgDiv.nextSibling)
+        imgDiv.style.display = 'none';
+        listItem.insertBefore(saveBtn, editBtn.nextSibling)
+        editBtn.style.display = 'none';
+
+        saveBtn.addEventListener('click', function() {
+            let id = todo._id;
+            let editedTodo = {
+                title: editTitle.value,
+                description: editDescription.value,
+                imgUrl: editImgURL.value
+            };
+            axios.put('https://api.vschool.io/RobDeGeorge/todo/'+id, editedTodo).then(response => {
+                console.log(response.data);
+                
+            }).catch(error => {
+                console.log(error);
+            });
+            h2.textContent = editTitle.value;
+            h2.style.display = 'inherit';
+            p.textContent = editDescription.value;
+            p.style.display = 'inherit';
+            img.src = editImgURL.value;
+            imgDiv.style.display = 'inherit';
+            editBtn.style.display = 'inherit';
+
+            saveBtn.remove();
+            editTitle.remove();
+            editDescription.remove();
+            editImgURL.remove();
+            saveBtn.remove();
+        });
+    });
 
     listItem.appendChild(checkbox);
     listItem.appendChild(h2);
     listItem.appendChild(p);
     imgDiv.appendChild(img);
     listItem.appendChild(imgDiv);
+    listItem.appendChild(editBtn);
     listItem.appendChild(delBtn);
-
     list.appendChild(listItem);
 };
+
 get();
 const form = document.addListItem
 form.addEventListener('submit', (e) => {
