@@ -6,20 +6,22 @@ const readline = require("readline-sync");
 const enemies = ['Goomba', 'Koopa Troopa'];
 let isAlive = true;
 let hasWon = false;
-let myCharacter
-let charSelect
-let starAcquireTime
+let myCharacter;
+let charSelect;
+let starAcquireTime;
+let name;
 
 /****************************************************************** 
  * INTRO
  ******************************************************************/
+name = readline.question('What is your name? ');
 while (charSelect != 'm' && charSelect != 'l') {
     charSelect = readline.keyIn('Would you like to play as Mario (m) or Luigi (l)?', {limit: 'ml', hideEchoBack: true, mask: ""});
     if (charSelect === 'm') {
-        myCharacter = new Character('Mario');
+        myCharacter = new Character(`Mario ${name}`);
         break;
     } else if (charSelect === 'l') {
-        myCharacter = new Character('Luigi');
+        myCharacter = new Character(`Luigi ${name}`);
         break;
     };
 };
@@ -136,10 +138,8 @@ function addItemToCharacter(newItem) {
         if (isFound === undefined) {
             //add new if not there yet else 
             if (newItem === 'Magic Mushroom') {
-                console.log('I ADDED A MAGIC MUSHROOM');
                 myCharacter.powerUps[0] = newItem;
             } else if (newItem === 'Super Star') {
-                console.log('I ADDED A SUPER STAR');
                 myCharacter.powerUps[1] = newItem;
                 starAcquireTime = new Date().getTime();
             };
@@ -160,7 +160,7 @@ function boxEncounter() {
         console.log(`You got a ${newItem}!`);
         addItemToCharacter(newItem);
     } else if (action === 'w'){
-        console.log(`\n\n${myCharacter.name} is a minimalist. Who reallyneeds all that loot anyways?\n\n`);
+        console.log(`\n\n${myCharacter.name} is a minimalist. Who really needs all that loot anyways?\n\n`);
     };
 };
 function removeStarIfExpired(starAcquireTime) {
@@ -185,7 +185,7 @@ function wait(ms) {
 };
 function checkCharacter() {
     // SHOWS: Coins, Currnet Powerups, Number of lives
-    console.log(`\n*******************************************\n**************${myCharacter.name}'s Status:**************\n**                                       **\n**  Lives: ${myCharacter.lives}                             **\n**  Coins: ${myCharacter.coins}                             **\n**  PowerUps: ${myCharacter.powerUps.join(' ')}  **\n**                                       **\n*******************************************\n*******************************************`)
+    console.log(`\n\n${myCharacter.name}'s Status:\n\nLives: ${myCharacter.lives}\nCoins: ${myCharacter.coins}\nPowerUps: ${myCharacter.powerUps.join(' ')}\n\n\n`)
     //console.log(sprintf("  0 Padded => %010.f", 123.4567));
 };
 function getRandEnemy() {
