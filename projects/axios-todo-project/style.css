@@ -4,17 +4,22 @@
     width: 100%;
 }
 #list{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-auto-rows: auto;
-}
-.list-item {
     display: flex;
     flex-direction: column;
+}
+.item-title {
+    padding: 0 10px 0 10px;
+}
+.item-description {
+    padding: 0 10px 0 10px;
+}
+.list-item {
+    display: grid;
+    grid-template-columns: 1fr 3fr 6fr 2fr 1fr 1fr;
+    grid-template-rows: 75px;
     align-items: center;
     border: 1px solid #000000;
     padding: 15px;
-    /* overflow: hidden; */
 }
 .img-container {
     display: flex;
@@ -23,5 +28,4 @@
 .item-image {
     width: 25%;
     height: auto;
-    
 }

@@ -108,12 +108,12 @@ function makeTodo(todo) {
                 console.log(error);
             });
             h2.textContent = editTitle.value;
-            h2.style.display = 'inherit';
+            h2.style.display = 'flex';
             p.textContent = editDescription.value;
-            p.style.display = 'inherit';
+            p.style.display = 'flex';
             img.src = editImgURL.value;
-            imgDiv.style.display = 'inherit';
-            editBtn.style.display = 'inherit';
+            imgDiv.style.display = 'flex';
+            editBtn.style.display = 'flex';
 
             saveBtn.remove();
             editTitle.remove();
