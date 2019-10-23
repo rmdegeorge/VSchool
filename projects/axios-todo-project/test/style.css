@@ -1,3 +1,7 @@
+[draggable]{
+    -khtml-user-drag: element;
+    -webkit-user-drag: element;
+}
 .main-container {
     display: flex;
     flex-direction: column;
@@ -34,4 +38,12 @@
 .item-image {
     width: auto;
     height: 100px;
+}
+
+.over {
+    border: 2px dashed #000000;
+    border-top: 2px solid #0000ff;
+}
+.dragElem {
+    opacity: 0.4;
 }
