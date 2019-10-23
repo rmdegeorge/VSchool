@@ -83,7 +83,7 @@ function makeTodo(todo) {
         saveBtn.textContent = 'Save';
         editTitle.value = h2.textContent;
         editDescription.value = p.textContent;
-        editImgURL.value = img.src
+        editImgURL.value = img.src;
         
         listItem.insertBefore(editTitle, h2.nextSibling);
         h2.style.display = 'none';
