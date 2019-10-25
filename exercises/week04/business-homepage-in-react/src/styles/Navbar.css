@@ -1,0 +1,23 @@
+.navbar {
+  display: flex;
+  justify-content: space-around;
+  background-color: #357abb;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+.nav-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  color: black;
+  padding: 4px 8px 4px 8px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.nav-link:hover {
+  text-decoration: none;
+  background-color: #b0d2f398;
+}

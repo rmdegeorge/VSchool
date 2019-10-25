@@ -1,0 +1,9 @@
+.product{
+  background-color: #4194e0;
+  padding: 15px;
+  border-radius: 20px;
+}
+.product-img {
+  width: auto;
+  max-height: 150px;
+}
