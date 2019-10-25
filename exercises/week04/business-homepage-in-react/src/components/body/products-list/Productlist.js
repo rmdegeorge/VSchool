@@ -4,7 +4,7 @@ import React from 'react';
 import Product from './product/Product.js';
 
 // CSS style
-import '../../../styles/ProductList.css';
+// import '../../../styles/ProductList.css';
 
 function ProductList() {
   return (

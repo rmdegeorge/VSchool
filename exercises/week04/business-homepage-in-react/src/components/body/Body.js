@@ -1,6 +1,6 @@
 import React from 'react';
 import ProductList from './products-list/Productlist.js';
-import '../../styles/Body.css';
+// import '../../styles/Body.css';
 
 function Body() {
   return (

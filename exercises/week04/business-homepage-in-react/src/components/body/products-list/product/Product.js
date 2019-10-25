@@ -1,7 +1,7 @@
 import React from 'react';
 
 // CSS style
-import '../../../../styles/Product.css';
+// import '../../../../styles/Product.css';
 
 function Product(props) {
   const styles = {

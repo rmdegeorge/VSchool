@@ -1,3 +1,70 @@
 .App {
   text-align: center;
 }
+.header{
+  background-color: #83afda;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 150px
+}
+.navbar {
+  display: flex;
+  justify-content: space-around;
+  background-color: #357abb;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+.nav-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  color: black;
+  padding: 4px 8px 4px 8px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.nav-link:hover {
+  text-decoration: none;
+  background-color: #b0d2f398;
+}
+
+.footer {
+  background-color: #83afda;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 30px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  border-top: 10px solid #357abb;
+  border-bottom: 10px solid #357abb;
+}
+.footer > .name {
+  font-weight: bold;
+}
+.body {
+  margin-top: 120px;
+  margin-bottom: 75px;
+}
+.product-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-auto-rows: 300px;
+  grid-gap: 10px;
+  width: 90%;
+  margin: auto;
+}
+.product{
+  background-color: #4194e0;
+  padding: 15px;
+  border-radius: 20px;
+}
+.product-img {
+  width: auto;
+  max-height: 150px;
+}
