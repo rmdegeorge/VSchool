@@ -11,7 +11,10 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-  padding: 0 0 50px 50px;
+  padding: 0 0 50px 10px;
+  background-color: rgb(101, 129, 165);
+  margin: 15px;
+  border-radius: 25px;
 }
 .petcontainer {
   display: grid;

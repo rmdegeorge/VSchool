@@ -12,7 +12,7 @@ function FriendList(props) {
 
   return (
     <div className="friendlist">
-      <h2>My Friends:</h2>
+      <h1>My Friends:</h1>
       {displayFriends}
     </div>
   )
