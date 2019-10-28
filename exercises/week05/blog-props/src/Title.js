@@ -5,7 +5,7 @@ function Title() {
     <div className="title">
         Clean Blog
         <div className="subtitle">
-          A Blog Theme by Start Bootstrap
+          <h1>A Blog Theme by Start Bootstrap</h1>
         </div>
     </div>
   )
