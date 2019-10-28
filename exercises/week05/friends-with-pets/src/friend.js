@@ -1,18 +1,16 @@
 import React from 'react';
-import Pet from './pet';
+import PetContainer from './petcontainer';
 
 function Friend(props) {
   
-  const displayPets = props.pets.map((pet, index) => 
-  <div key={pet.name + index}>
-    <Pet name={pet.name} breed={pet.breed} />
-  </div>
-)
+  let {name, age, pets} = props
   return (
     <div className="friend">
-      <h3 className="friendname">Name: {props.name}</h3>
-      <p className="friendage">Age: {props.age}</p>
-      {displayPets}
+      <div>
+        <h3 className="friendname">Name: {name}</h3>
+        <p className="friendage">Age: {age}</p>
+      </div>
+      <PetContainer pets={pets}/>
     </div>
   )
 }
