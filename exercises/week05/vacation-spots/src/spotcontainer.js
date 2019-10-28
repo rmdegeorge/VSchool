@@ -5,6 +5,7 @@ import vacationSpotsInfo from './vacationspots.json';
 
 const SpotContainer = (props) => {
   const mappedSpots = vacationSpotsInfo.map((spot, i) => 
+  
   <Spot key={spot.place + i}
         place={spot.place}
         price={spot.price}
@@ -12,7 +13,6 @@ const SpotContainer = (props) => {
   )
   return (
     <div className="spotcontainer">
-      container
       {mappedSpots}
     </div>
   )
