@@ -12,7 +12,8 @@ function App() {
       subtitle: "Subtitle " + i,
       info: "Info " + i,
       styles: {
-        backgroundColor: colors[i]
+        backgroundColor: colors[i],
+        borderRadius: "20px",
       }
     })
   };
