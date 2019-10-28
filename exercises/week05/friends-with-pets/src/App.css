@@ -1,7 +1,6 @@
 .App {
   text-align: center;
-  border: 1px solid black;
-  width: 75%;
+  width: 100%;
   padding: 5%;
   margin: auto;
 }
@@ -12,14 +11,32 @@
   margin: auto;
 }
 .friend {
+  display: flex;
+  
   border: 1px solid black;
   width: 75%;
   padding: 5%;
   margin: auto;
 }
+.friendname {
+  grid-area: "n"
+}
+.friendage {
+  grid-area: "a"
+}
 .pet {
+  grid-area: "p";
   border: 1px solid black;
   width: 75%;
   padding: 5%;
   margin: auto;
+}
+.pettitle {
+
+}
+.petname {
+
+}
+.petbreed {
+
 }

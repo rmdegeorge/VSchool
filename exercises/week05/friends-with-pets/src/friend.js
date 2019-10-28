@@ -10,8 +10,8 @@ function Friend(props) {
 )
   return (
     <div className="friend">
-      <h3>Name: {props.name}</h3>
-      <p>Age: {props.age}</p>
+      <h3 className="friendname">Name: {props.name}</h3>
+      <p className="friendage">Age: {props.age}</p>
       {displayPets}
     </div>
   )
