@@ -1,0 +1,47 @@
+html, body {
+  margin: 0;
+  background-color: #000;
+}
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  
+}
+.BoxContainer {
+  width: 60%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 200px 200px;
+  grid-gap: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box;
+}
+.Box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  border-radius: 20px;
+}
+.ButtonContainer {
+  width: 100%;
+  grid-column: 1 / span 2;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-auto-rows: 50px;
+  grid-gap: 10px;
+}
+.Button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: grey;
+  border-radius: 20px;
+}
