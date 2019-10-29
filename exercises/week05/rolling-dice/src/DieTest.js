@@ -10,7 +10,7 @@ class Die extends Component {
     // const displaySpots = 
     return (
       <div className="Die">
-        <h1>{this.props.spots}</h1>
+        {/* <h1>{this.props.spots}</h1> */}
       </div>
     );
   }

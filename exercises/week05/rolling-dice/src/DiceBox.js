@@ -6,7 +6,7 @@ class DiceBox extends Component {
   constructor() {
     super();
     this.state = {
-      dieCurrentNums: [1, 1, 1, 1, 1]
+      dieCurrentNums: [1, 2, 3, 4, 5]
     }
   }
   randNum = () => {

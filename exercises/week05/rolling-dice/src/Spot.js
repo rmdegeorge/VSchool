@@ -6,8 +6,7 @@ class Spot extends Component {
   }
   render(){
     return (
-      <div className="Spot" style={{top: this.props.positionY, left: this.props.positionX}}>
-
+      <div className="Spot" style={{top: this.props.positionX, left: this.props.positionX}}>
       </div>
     );
   }

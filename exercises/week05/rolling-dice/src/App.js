@@ -17,3 +17,11 @@ class App extends Component {
 }
 
 export default App;
+
+
+/**
+ * Still has errors displaying spots.
+ * 
+ * for some reason when the spots render, they don't take the proper positions...
+ * for numbers 1, 2, & 3 it works correctly.  Numbers 4, 5, & 6 just repeat 2 and 3...
+ */
