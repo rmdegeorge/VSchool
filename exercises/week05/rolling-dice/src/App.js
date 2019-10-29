@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
-
 import './App.css';
+import DiceBox from './DiceBox';
 
 class App extends Component {
   constructor() {
@@ -9,7 +9,8 @@ class App extends Component {
   render(){
     return (
       <div className="App">
-        I'm an App!
+        <h1>Dice Box</h1>
+        <DiceBox />
       </div>
     );
   }

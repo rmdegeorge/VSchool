@@ -1,1 +1,34 @@
-.App {}
+body {
+  background-color: darkgray;
+  margin: 0;
+}
+.App {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+.DiceBox {
+  display: grid;
+  grid-template-columns: 100px 100px 100px 100px 100px;
+  grid-gap: 20px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.Die {
+  background-color: #fff;
+  height: 100px;
+  width: 100px;
+  border-radius: 20px;
+  box-sizing: border-box;
+  box-shadow: grey 5px 5px;
+}
+
+.Spot {
+  position: relative;
+  background-color: #000;
+  border-radius: 50%;
+  width: 15px;
+  height: 15px;
+  box-sizing: border-box;
+}
+.RollButton {}
