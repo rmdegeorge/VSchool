@@ -1,0 +1,28 @@
+[
+  {
+    "place": "Meridian, Idaho",
+    "price": 40,
+    "timeToGo": "Spring",
+    "backgroundColor": "grey"
+  },{
+    "place": "Cancun",
+    "price": 900,
+    "timeToGo": "Winter",
+    "backgroundColor": "grey"
+  },{
+    "place": "China",
+    "price": 1200,
+    "timeToGo": "Fall",
+    "backgroundColor": "grey"
+  },{
+    "place": "Russia",
+    "price": 1100,
+    "timeToGo": "Summer",
+    "backgroundColor": "grey"
+  },{
+    "place": "Lebanon",
+    "price": 400,
+    "timeToGo": "Spring",
+    "backgroundColor": "grey"
+  }
+]
