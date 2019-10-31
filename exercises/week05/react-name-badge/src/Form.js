@@ -14,24 +14,24 @@ class Form extends Component {
       favFood: '',
       about: '',
       badges: [
-        {
-          firstName: 'Joe',
-          lastName: 'Schmoe',
-          email: 'joeschmoe@bs.net',
-          placeOfBirth: 'NYC',
-          phone: '5551239876',
-          favFood: 'Hot Dogs',
-          about: 'I\'m super lame'
-        },
-        {
-          firstName: 'Rob',
-          lastName: 'DeGeorge',
-          email: 'rmdegeorge@gmail.com',
-          placeOfBirth: 'KCMO',
-          phone: '8165062533',
-          favFood: 'Tacos',
-          about: 'I super like tacos!'
-        }
+        // {
+        //   firstName: 'Joe',
+        //   lastName: 'Schmoe',
+        //   email: 'joeschmoe@bs.net',
+        //   placeOfBirth: 'NYC',
+        //   phone: '5551239876',
+        //   favFood: 'Hot Dogs',
+        //   about: 'I\'m super lame'
+        // },
+        // {
+        //   firstName: 'Rob',
+        //   lastName: 'DeGeorge',
+        //   email: 'rmdegeorge@gmail.com',
+        //   placeOfBirth: 'KCMO',
+        //   phone: '8165062533',
+        //   favFood: 'Tacos',
+        //   about: 'I super like tacos!'
+        // }
       ]
     };
 
@@ -40,13 +40,13 @@ class Form extends Component {
     e.preventDefault();
     let {firstName, lastName, email, placeOfBirth, phone, favFood, about} = e.target;
     const newState = {
-      firstName: firstName,
-      lastName: lastName,
-      email: email,
-      placeOfBirth: placeOfBirth,
-      phone: phone,
-      favFood: favFood,
-      about: about
+      firstName: firstName.value,
+      lastName: lastName.value,
+      email: email.value,
+      placeOfBirth: placeOfBirth.value,
+      phone: phone.value,
+      favFood: favFood.value,
+      about: about.value
     };
     this.setState(prev => {
       return {
@@ -59,7 +59,51 @@ class Form extends Component {
     this.setState({[name]: value})
   }
   render() {
-    console.log(this.state.badges)
+    /**
+     * check each input field for appropriat text input.
+     * each field must have at least 3 chars before submit button is enabled.
+     * phone number must have correct format (ex. 9991114444) 10 digits with no extra chars. 
+     *****> remove all extra chars and spaces
+     * 
+     */
+    const isOnlyDigits = (str) => [...str].every(c => '0123456789'.includes(c));
+    const {firstName, lastName, email, placeOfBirth, phone, favFood, about, badges, color} = this.state;
+    let submitDisabled = true;
+    if (firstName==='' || firstName.length<3) {
+      // display reason for submit disabled
+      // submitDisabled = true;
+    } else if (lastName==='' || lastName.length<3) {
+      // display reason for submit disabled
+      // submitDisabled = true;
+    } else if (email==='' || email.length<3) {
+      // display reason for submit disabled
+      // submitDisabled = true;
+    } else if (placeOfBirth==='' || placeOfBirth.length<3) {
+      // display reason for submit disabled
+      // submitDisabled = true;
+    } else if (phone==='' || !isOnlyDigits(phone)) {
+      // display reason for submit disabled
+      // submitDisabled = true;
+    } else if (favFood==='' || favFood.length<3) {
+      // display reason for submit disabled
+      // submitDisabled = true;
+    } else if (about==='' || about.length<3) {
+      // display reason for submit disabled
+      // submitDisabled = true;
+    } else {
+      submitDisabled = false;
+    }
+    /*
+    if (firstName!=='' && firstName.length>=3 && 
+        lastName!=='' && lastName.length>=3 && 
+        email!=='' && email.length>=3 && 
+        placeOfBirth!=='' && placeOfBirth.length>=3 && 
+        phone!=='' && isOnlyDigits(phone) &&
+        favFood!=='' && favFood.length>=3 && 
+        about!=='' && about.length>=3) {
+      submitDisabled = false;
+    } 
+    */
     return (
       <div className="container">
         <form onSubmit={this.handleSubmit} className="Form">
@@ -71,7 +115,7 @@ class Form extends Component {
           <input type="tel" className="phone" name="phone" placeholder="Phone: 5551234567" value={this.state.phone} onChange={this.handleOnChange} />
           <input type="text" className="favFood" name="favFood" placeholder="Favorite Food" value={this.state.favFood} onChange={this.handleOnChange} />
           <textarea className="about" name="about" placeholder="About" value={this.state.about} onChange={this.handleOnChange} />
-          <button className="submit" type="submit">Submit</button>
+          <button className="submit" type="submit" disabled={submitDisabled}>Submit</button>
         </form>
 
         <NameBadgeContainer badges={this.state.badges}/>  
