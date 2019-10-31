@@ -1,55 +1,54 @@
-import React, {Component} from 'react';
+import React from 'react'
 
-export default class Options extends Component{
-    constructor(props) {
-        super(props);
+class Options extends React.Component {
+    constructor(){
+        super()
         this.state = {
             toggle: false
         }
-
     }
 
     handleToggle = () => {
-        this.setState(prev => {
-            return {toggle: !prev.toggle}
+        this.setState(prevState => {
+            return {toggle: !prevState.toggle}
         })
     }
 
-    render(props) {
+    render(){
         const styles = {
             display: "flex",
             alignItems: "center",
             flexDirection: "column"
         }
-        let visibility;
-        if (this.state.toggle){
-            visibility = "visible";
-        } else {
-            visibility = "hidden";
-        }
-        const toggleableInputStyles = {visibility};
+
+        // change style object for input
+        // let visibility;
+
+        // if(this.state.toggle){
+        //     visibility = "visible"
+        // } else {
+        //     visibility = "hidden"
+        // }
+
+        // const toggleableInputStyles = { visibility } 
+
+        // map over greetings from parent
+        const mappedGreetings = [].map(()=>{})
+
         return (
-            <div>
+            <div style={styles}>
                 <select name="greeting drop down" id="greeting-options">
-                    <option value="">hello</option>
-                    <option value="">hi</option>
-                    <option value="">Good day, all you fine people</option>
+                    { mappedGreetings }
                 </select>
-                change color?<label></label><input onChange={this.handleToggle} type="checkbox"/>
-                
-                {
-                <label style={toggleableInputStyles} for="color">what color? 
-                  <input id="color" name="color" placeholder="#666" value={props.color} onChange={props.handleChange} />
-                </label>
-                }
-                {/* { this.state.toggle && 
+                show color input?<label></label><input onChange={this.handleToggle} type="checkbox"/>
+                { this.state.toggle &&
                 <label for="color">what color? 
-                  <input id="color" name="color" placeholder="#666" value={props.color} onChange={props.handleChange} />
-                </label>
-                } */}
-
-            </div> 
+                    <input onChange={this.props.handleChange} id="color" value={this.props.color} name="color" placeholder="#666"/> 
+                </label>               
+                }
+            </div>
         )
-
     }
 }
+      
+export default Options
