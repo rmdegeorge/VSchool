@@ -5,9 +5,11 @@ import './App.css';
 
 import Navbar from './Navbar';
 import Footer from './Footer';
+
 import Home from './Home';
 import About from './About';
-import Contact from './Contact';
+import ProductList from './ProuductList';
+import Product from './Product';
 
 
 export default class App extends Component {
@@ -21,7 +23,8 @@ export default class App extends Component {
         <Switch>
           <Route exact path="/" component={Home} />
           <Route path="/about" component={About} />
-          <Route path="/contact" component={Contact} />
+          <Route path="/products" component={ProductList} />
+          <Route path="/products/:_id" component={Product} />
         </Switch>
         <Footer />
       </div>
