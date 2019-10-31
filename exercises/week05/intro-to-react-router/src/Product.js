@@ -2,7 +2,7 @@ import React from 'react';
 import products from './products.json';
 
 function Product(props) {
-  let {_id} =props.match.params;
+  let {_id} = props.match.params;
   const product = products.find(product => product._id === _id);
   let {name, price, description} = product;
   return (

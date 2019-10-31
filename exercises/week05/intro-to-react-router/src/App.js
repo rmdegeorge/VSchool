@@ -17,17 +17,19 @@ export default class App extends Component {
     super();
   }
   render() {
+    console.log(Product)
     return (
       <div className="App">
         <Navbar />
         <Switch>
           <Route exact path="/" component={Home} />
           <Route path="/about" component={About} />
-          <Route path="/products" component={ProductList} />
-          <Route path="/products/:_id" component={Product} />
+          <Route exact path="/products" component={ProductList} />
+          <Route path="/products/:_id" component={Product} /> 
         </Switch>
         <Footer />
       </div>
     );
   }
 }
+
