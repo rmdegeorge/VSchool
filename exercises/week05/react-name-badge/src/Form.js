@@ -14,24 +14,24 @@ class Form extends Component {
       favFood: '',
       about: '',
       badges: [
-        // {
-        //   firstName: 'Joe',
-        //   lastName: 'Schmoe',
-        //   email: 'joeschmoe@bs.net',
-        //   placeOfBirth: 'NYC',
-        //   phone: '5551239876',
-        //   favFood: 'Hot Dogs',
-        //   about: 'I\'m super lame'
-        // },
-        // {
-        //   firstName: 'Rob',
-        //   lastName: 'DeGeorge',
-        //   email: 'rmdegeorge@gmail.com',
-        //   placeOfBirth: 'KCMO',
-        //   phone: '8165062533',
-        //   favFood: 'Tacos',
-        //   about: 'I super like tacos!'
-        // }
+        {
+          firstName: 'Joe',
+          lastName: 'Schmoe',
+          email: 'joeschmoe@bs.net',
+          placeOfBirth: 'NYC',
+          phone: '5551239876',
+          favFood: 'Hot Dogs',
+          about: 'I\'m super lame'
+        },
+        {
+          firstName: 'Rob',
+          lastName: 'DeGeorge',
+          email: 'rmdegeorge@gmail.com',
+          placeOfBirth: 'KCMO',
+          phone: '8165062533',
+          favFood: 'Tacos',
+          about: 'I super like tacos!'
+        }
       ]
     };
 
