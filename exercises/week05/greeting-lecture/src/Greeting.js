@@ -1,8 +1,8 @@
 import React from 'react'
 
-function Greeting() {
+function Greeting(props) {
     return (
-        <h1>Good day, all you fine people</h1>
+        <h1 style={{color: props.color}}>Good day, all you fine people</h1>
     )
 }
 
