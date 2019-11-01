@@ -1,1 +1,36 @@
-.App {}
+html, body {
+  margin: 0;
+}
+.App {
+  margin: 0;
+}
+.Navbar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-items: center;
+  width: 100%;
+  height: 150px;
+  background-color: #7d8a7d7e;
+  margin: 0;
+}
+.links {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.Home {}
+.About {}
+.Services {}
+.Footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  background-color: #7d8a7d7e;
+}

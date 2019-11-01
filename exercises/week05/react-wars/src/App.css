@@ -1,1 +1,45 @@
-.App {}
+html, body {
+  margin: 0;
+}
+.App {
+  display: grid;
+  grid-template-areas: 
+    "h h h h h h"
+    "s . . . . ."
+    "f f f f f f";
+}
+.Header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  grid-area: h;
+  background-color: lightskyblue;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 7vw;
+}
+.Sidebar {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  grid-area: s;
+  background-color: lightcoral;
+  height: 86vw;
+  margin-top: 7vw;
+}
+.Footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  grid-area: f;
+  background-color: lightskyblue;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  height: 7vw;
+
+}
