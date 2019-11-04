@@ -13,7 +13,8 @@ html, body {
   justify-content: center;
   align-items: center;
   grid-area: h;
-  background-color: lightskyblue;
+  background-color: #000;
+  color: #ffd700;
   position: fixed;
   top: 0;
   left: 0;
@@ -26,16 +27,23 @@ html, body {
   justify-content: start;
   align-items: center;
   grid-area: s;
-  background-color: lightcoral;
+  background-color: #000;
+  color: #ffffff;
   height: 86vw;
   margin-top: 7vw;
+}
+.Sidebar > :nth-child(1n) {
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 0 10px 0;
 }
 .Footer {
   display: flex;
   justify-content: center;
   align-items: center;
   grid-area: f;
-  background-color: lightskyblue;
+  background-color: #000;
+  color: #ffd700;
   position: fixed;
   bottom: 0;
   left: 0;
