@@ -1,29 +1,35 @@
 import React, {Component} from 'react';
-import Axios from 'axios';
+import axios from 'axios';
 
 
 export default class Form extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
-      _id: '',
+      title: '',
+      description: '',
+      imgUrl: '',
+    };
+  };
+  handleChange = (e) => {
+    this.setState({[e.target.name]: e.target.value})
+  };
+  handleSubmit = (e) => {
+    e.preventDefault();
+    this.props.handleSubmit(this.state);
+    this.setState({
       title: '',
       description: '',
       imgUrl: '',
       completed: ''
-    };
+    });
   };
-  handleSubmit = (e) => {
-    e.preventDefault();
-
-  }
-  handleChange = (e) => {
-    this.setState({[e.target.name]: e.target.value})
-  }
   render() {
+    console.log('FORM STATE:')
+    console.log(this.state)
     return (
-      <form action="submit" className="Form">
-        <input type="text" name="title" id="title" className="titleInput" placeholder="Title" onChange={this.handleChange} value={this.state.title} onSubmit={this.handleSubmit(this.state)} />
+      <form className="Form" onSubmit={this.handleSubmit}>
+        <input type="text" name="title" id="title" className="titleInput" placeholder="Title" onChange={this.handleChange} value={this.state.title} />
         <textarea name="description" id="description" className="descInput" placeholder="Description" onChange={this.handleChange} value={this.state.description} />
         <input type="text" name="imgUrl" id="imgUrl" className="urlInput" placeholder="Image URL" onChange={this.handleChange} value={this.state.imgUrl} />
         <button type="submit" className="submitButton">Add To Do</button>

@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import Axios from 'axios';
+import axios from 'axios';
 
 import Form from './Form';
 import Header from './Header';
@@ -15,22 +15,22 @@ export default class App extends Component {
     };
 
   };
-  
+
   handleSubmit = (todo) => {
-    Axios.post('https://api.vschool.io/RobDeGeorge/todo', todo).then(response => {
+    axios.post('https://api.vschool.io/RobDeGeorge/todo', todo).then(response => {
       this.setState(prevState => {
-        return {todos: [...prevState.todos, response.data]}
+        return {todoList: [response.data, ...prevState.todoList]}
       });
     }).catch(error => {
       console.log(error);
     });
-  }
+  };
 
   componentDidMount() {
-    Axios.get('https://api.vschool.io/RobDeGeorge/todo').then(response => {
+    axios.get('https://api.vschool.io/RobDeGeorge/todo').then(response => {
       console.log(response);
       this.setState({
-        todoList: response.data
+        todoList: response.data.reverse()
       })
     }).catch(error => {
       console.log(error);
@@ -45,7 +45,7 @@ export default class App extends Component {
       <div className="App">
         <Header />
         <Form handleSubmit={this.handleSubmit}/>
-        <TodoList todolist={this.state.todoList} />
+        <TodoList todoList={this.state.todoList} />
       </div>
     );
   }
