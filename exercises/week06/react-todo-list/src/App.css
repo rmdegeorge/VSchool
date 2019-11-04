@@ -1,1 +1,66 @@
-.App {}
+html, body {
+  margin: 0;
+}
+.App {
+}
+.Header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 150px;
+  background-color: rgb(45, 59, 105);
+  color: rgb(226, 206, 153);
+}
+.Form {
+  display: grid;
+  /* grid-template-columns: 1fr 1fr;
+  grid-template-rows: 50px 50px 100px 50px 50px; */
+  grid-template-areas: 
+    "T T T"
+    "D D D"
+    "D D D"
+    "D D D"
+    "U U U"
+    "C S .";
+  grid-gap: 15px;
+  width: 75%;
+  height: 250px;
+  margin: 50px auto;
+
+}
+.Form > :nth-child(1n) {
+  border: none;
+  padding: 10px;
+}
+.titleInput {
+  grid-area: T;
+  background-color: #5389c72d;
+  border-radius: 8px;
+  box-shadow: 3px 3px#203a58ad;
+}
+.descInput {
+  grid-area: D;
+  border-radius: 8px;
+  background-color: #5389c72d;
+  box-shadow: 3px 3px#203a58ad;
+
+}
+.urlInput {
+  grid-area: U;
+  border-radius: 8px;
+  background-color: rgba(83, 137, 199, 0.178);
+  box-shadow: 3px 3px#203a58ad;
+
+}
+.checkboxInput {
+  grid-area: C;
+}
+.submitButton {
+  grid-area: S;
+  border-radius: 20px;
+  background-color: #c7ac5365;
+  box-shadow: 3px 3px#5a4d2465;
+  width: 100px;
+  height: 40px;
+}
