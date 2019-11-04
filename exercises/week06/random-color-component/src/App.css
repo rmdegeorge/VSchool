@@ -1,2 +1,9 @@
-.App {}
-.ColorComponent {}
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.ColorComponent {
+  height: 400px;
+  width: 400px;
+}
