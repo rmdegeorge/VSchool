@@ -1,5 +1,8 @@
 import React from 'react';
 
+import Menu from './Menu';
+import Card from './Card';
+
 import './App.css';
 
 export default class App extends React.Component {
@@ -8,11 +11,11 @@ export default class App extends React.Component {
   }
   render() {
     return (
-    <div className="App">
-
-    </div>
+      <div className="App">
+        I'm an App!
+        <Menu />
+        <Card />
+      </div>
     );
   };
 }
-
-export default App;
