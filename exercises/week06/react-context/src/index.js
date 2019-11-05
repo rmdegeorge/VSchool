@@ -1,14 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import ThemeProvider from './ThemeProvider';
+import OurProvider from './OurProvider'
 import App from './App';
 export const {Consumer,Provider} = React.createContext();
 
 ReactDOM.render(
-  <ThemeProvider>
-    <App />
-  </ThemeProvider>, 
+  <OurProvider>
+    <App age={31} />
+  </OurProvider>, 
   document.getElementById('root')
 );
 

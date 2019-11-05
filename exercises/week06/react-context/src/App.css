@@ -2,7 +2,7 @@ html, body {
   margin: 0;
 }
 .App {}
-.dark-header {
+.dark {
   text-align: center;
   background-color: #333;
   height: 100vh;
@@ -11,7 +11,7 @@ html, body {
   color: #b5b51e;
 }
 
-.light-header {
+.light {
   text-align: center;
   background-color: white;
   height: 100vh;

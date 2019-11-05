@@ -1,18 +1,18 @@
 import React, {Component} from 'react';
 
-import Header from './Header';
+import {withProvider} from './OurProvider';
+import Person from './Person';
 
 import './App.css';
 
-export default class App extends Component {
-  constructor(props) {
-    super(props)
-  }
-  render() {
-    return (
-      <div className="App">
-        <Header />
-      </div>
-    )
-  }
+function App(props) {
+  return (
+    <div className={props.on ? 'light' : 'dark'}>
+      <h1>Hello There</h1>
+      <button onClick={props.toggle}></button>
+      <Person />
+    </div>
+  )
 }
+
+export default withProvider(App);
