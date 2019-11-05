@@ -5,11 +5,11 @@ function Todo(props) {
   return (
     <div className="Todo">
       <label className="todoCompleted">Complete: <input type="checkbox" name="completed" id="completed"/></label>
-      <h3 className="todoTitle">Title: {title}</h3>
-      <p className="todoDesc">Description: {description}</p>
+      <div classNapxme="todoTitle">{title}</div>
+      <div className="todoDesc">{description}</div>
       <img className="todoImg" src={imgUrl} alt={`Image URL for ${title}`}/>
       <button className="todoEdit">Edit</button>
-      <button className="todoDelet">Delete</button>
+      <button className="todoDelete">Delete</button>
     </div>
   );
 }

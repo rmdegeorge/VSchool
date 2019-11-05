@@ -52,7 +52,7 @@ html, body {
 .urlInput {
   grid-area: U;
   border-radius: 8px;
-  background-color: rgba(83, 137, 199, 0.178);
+  background-color: #5389c72d;
   box-shadow: 3px 3px#203a58ad;
 
 }
@@ -63,16 +63,32 @@ html, body {
   box-shadow: 3px 3px#5a4d2465;
 }
 .TodoList {
-  width: 75%;
+  width: 80%;
   margin: 25px auto;
 }
-/* .Todo {
+.Todo {
   display: grid;
-  grid-template-columns: 5fr 8fr 12fr 4fr 1fr 1fr;
-  grid-template-rows: 40px;
-  grid-gap: 5px;
-} */
+  grid-template-columns: 1fr 5fr 12fr 4fr 60px 60px;
+  grid-template-rows: 75px;
+  grid-gap: 10px;
+  margin-top: 15px;
+  overflow: hidden;
+  border-radius: 20px;
+  background-color: #5389c72d;
+  box-shadow: 3px 3px#203a58ad;
+  
+}
+.Todo > :nth-child(1n) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 5px;
+}
+.Todo > button {
+  border-radius: 15px;
+}
 .todoImg {
   width: 100px;
   height: auto;
+  border-radius: 15px;
 }
