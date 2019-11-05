@@ -76,7 +76,8 @@ html, body {
   border-radius: 20px;
   background-color: #5389c72d;
   box-shadow: 3px 3px#203a58ad;
-  
+  justify-content: center;
+  align-items: center;
 }
 .Todo > :nth-child(1n) {
   display: flex;
@@ -86,9 +87,11 @@ html, body {
 }
 .Todo > button {
   border-radius: 15px;
+  height: 30px;
+  width: 50px;
 }
 .todoImg {
-  width: 100px;
-  height: auto;
+  width: auto;
+  height: 60px;
   border-radius: 15px;
 }

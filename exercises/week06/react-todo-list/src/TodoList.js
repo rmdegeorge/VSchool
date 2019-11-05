@@ -3,7 +3,7 @@ import Todo from './Todo';
 
 
 function TodoList(props) {
-  const mappedTodos = props.todoList.map(todoItem => <Todo key={todoItem._id} todoItem={todoItem} />)
+  const mappedTodos = props.todoList.map(todoItem => <Todo key={todoItem._id} _id={todoItem._id} todoItem={todoItem} handleSave={props.handleSave} handleDelete={props.handleDelete} />)
   return (
     <div className="TodoList">
     <div className="Todo">

@@ -20,8 +20,7 @@ export default class Form extends Component {
     this.setState({
       title: '',
       description: '',
-      imgUrl: '',
-      completed: ''
+      imgUrl: ''
     });
   };
   render() {

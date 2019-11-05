@@ -25,6 +25,34 @@ export default class App extends Component {
       console.log(error);
     });
   };
+  handleSave = (updates, _id) => {
+    axios.put('https://api.vschool.io/RobDeGeorge/todo/'+_id, updates).then(response => {
+      console.log(response.data);
+      this.setState(prevState => {
+        const todoListCopy = [...prevState.todoList];
+        const index = todoListCopy.findIndex(todo => {
+          return todo._id === _id
+        });
+        todoListCopy[index] = response.data;
+        return {todoList: todoListCopy};
+      });
+    }).catch(error => {
+      console.log(error);
+    });
+  }
+  handleDelete = (_id) => {
+    axios.delete('https://api.vschool.io/RobDeGeorge/todo/' + _id).then(response => {
+      console.log(response.data);
+      this.setState((prevState) => {
+        const todoList = prevState.todoList.filter(todo => {
+          return todo._id !== _id;
+        })
+        return{todoList: todoList};
+      })
+    }).catch(error => {
+      console.log(error);
+    });
+  }
 
   componentDidMount() {
     axios.get('https://api.vschool.io/RobDeGeorge/todo').then(response => {
@@ -37,7 +65,7 @@ export default class App extends Component {
     });;
   };
   render() {
-    console.log('STATE:')
+    console.log('APP STATE:')
     console.log(this.state.todoList)
 
     
@@ -45,7 +73,7 @@ export default class App extends Component {
       <div className="App">
         <Header />
         <Form handleSubmit={this.handleSubmit}/>
-        <TodoList todoList={this.state.todoList} />
+        <TodoList todoList={this.state.todoList} handleSave={this.handleSave} handleDelete={this.handleDelete} />
       </div>
     );
   }
