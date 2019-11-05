@@ -1,7 +1,8 @@
 import React from 'react';
 import {withTheme} from './ThemeProvider';
 
-const Header = ({theme, toggleTheme}) => {
+
+const Header = ({theme,toggleTheme}) => {
   return (
     <div className={`${theme}-header`}>
       <h1>My Super Sick Header</h1>

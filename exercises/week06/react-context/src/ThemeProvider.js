@@ -1,5 +1,5 @@
 import React from 'react';
-import {Provider, Consumer} from './index';
+import {Provider,Consumer} from './index';
 
 export default class ThemeProvider extends React.Component {
   constructor(props) {
@@ -16,7 +16,8 @@ export default class ThemeProvider extends React.Component {
   }
   render() {
     const props = {
-      toggleTheme: this.toggleTheme, ...this.state
+      toggleTheme: this.toggleTheme, 
+      ...this.state
     }
     return (
       // return the theme Provider and it's children
@@ -27,10 +28,10 @@ export default class ThemeProvider extends React.Component {
   }
 }
 
-export const withTheme = C => props => {
-  return (
-    <Consumer>
-      {value => <C {...value}{...props}/>}
-    </Consumer>
+export function withTheme(Comp){
+  return(
+    props =>  <Consumer>
+                {value => <Comp {...value}{...props}/>}
+              </Consumer>
   )
 }
