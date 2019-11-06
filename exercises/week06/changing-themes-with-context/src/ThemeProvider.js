@@ -1,4 +1,5 @@
 import React from 'react';
+import {Provider, Consumer} from './index';
 
 class ThemeProvider extends React.Component {
   constructor() {
@@ -9,7 +10,7 @@ class ThemeProvider extends React.Component {
   };
   toggleTheme() {
     this.setState(prevState => ({
-      theme: prevState.theme === 'dark' ? 'light' : 'dark';
+      theme: prevState.theme === 'dark' ? 'light' : 'dark'
     }));
   };
   render() {
@@ -29,7 +30,7 @@ export default ThemeProvider;
 export function withTheme(Comp) {
   return (
     props =>  <Consumer>
-                {value => <Comp {...value}{...props}}
+                {value => <Comp {...value}{...props} />}
               </Consumer>
   )
 }

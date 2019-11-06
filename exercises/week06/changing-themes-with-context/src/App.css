@@ -5,6 +5,14 @@ html, body {
   position: relative;
 
 }
+.dark-nav {
+  background-color: #333;
+  color: #b5b51e;
+}
+.light-nav {
+  background-color: white;
+  color: #333;
+}
 .Navbar {
   display: flex;
   justify-content: center;
@@ -15,10 +23,26 @@ html, body {
   width: 100vw;
   height: 10vh;
 }
+.dark-main {
+  background-color: rgb(32, 36, 54);
+  color: #b5b51e;
+}
+.light-main {
+  background-color: rgb(162, 198, 233);
+  color: #333;
+}
 .Main {
   display: flex;
   justify-content: center;
   margin-top: 10vh;
+}
+.dark-footer {
+  background-color: #333;
+  color: #b5b51e;
+}
+.light-footer {
+  background-color: white;
+  color: #333;
 }
 .Footer {
   display: flex;

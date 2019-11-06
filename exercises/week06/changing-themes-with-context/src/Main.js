@@ -1,11 +1,13 @@
 import React from 'react';
+import {withTheme} from './ThemeProvider';
 
-function Main(props) {
+function Main({theme, toggleTheme}) {
   return (
-    <div className="Main">
+    <div className={`${theme}-main Main`}>
       I'm the Main bit
+      <button onClick={toggleTheme}>{theme === 'dark' ? 'Switch to Light' : 'Switch to Dark'}</button>
     </div>
   )
 }
 
-export default Main;
+export default withTheme(Main);
