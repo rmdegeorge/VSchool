@@ -22,7 +22,7 @@ class AutoCompleteText extends Component {
     this.setState(() => ({suggestions, text: value}));
   }
 
-  renderSuggestions() {
+  renderSuggestions = () => {
     const {suggestions} = this.state;
     if (suggestions.length === 0) {
       return null;
