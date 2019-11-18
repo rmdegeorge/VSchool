@@ -24,7 +24,7 @@ class TodoProvider extends Component {
 		getAllTodos = () => {
 				axios.get('https://api.vschool.io/bob/todo').then(res => {
 						this.setState({todos:res.data})
-				})r
+				})
 		}
 
 		editTodo = (id, updatedTodo) => {
