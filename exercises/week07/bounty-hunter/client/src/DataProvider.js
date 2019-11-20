@@ -13,6 +13,8 @@ class DataProvider extends React.Component {
   getAllBounties = () => {
     axios.get('/bounty/')
     .then(res => {
+      // console.log("\n\ngetAllBounties RESPONSE")
+      // console.log(res.data);
       this.setState({
         bounties: res.data
       });
@@ -21,10 +23,11 @@ class DataProvider extends React.Component {
       console.log(error);
     });
   };
-  addNewBounty = () => {
-    axios.post('/bounty/')
+
+  addNewBounty = (newBounty) => {
+    axios.post('/bounty/', newBounty)
     .then((res) => {
-      this.setState(prev => {
+      this.setState((prev) => {
         return {
           bounties: [...prev.bounties, res.data]
         };
@@ -32,19 +35,36 @@ class DataProvider extends React.Component {
     })
     .catch((error) => {
       console.log(error);
+    });
+  };
+
+  deleteBounty = (id) => {
+    axios.delete(`/bounty/${id}`)
+    .then((res) => {
+      this.setState((prev) => {
+        return {
+          bounties: prev.bounties.filter(bounty => bounty._id !== id)
+        }
+      })
     })
-  }
+    .catch((error) => {
+      console.log(error);
+    })
+  };
+
   render() {
     return (
       <Provider value={{
         ...this.state,
-        getBounties: this.getBounties,
+        getAllBounties: this.getAllBounties,
+        addNewBounty: this.addNewBounty,
+        deleteBounty: this.deleteBounty,
 
       }}>
         {this.props.children}
       </Provider>
-    )
-  }
+    );
+  };
 };
 
 export default DataProvider;

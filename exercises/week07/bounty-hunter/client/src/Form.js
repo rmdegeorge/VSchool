@@ -1,11 +1,16 @@
 import React from 'react';
 import styled from 'styled-components';
 
+import {withData} from './DataProvider';
+
 const BountyForm = styled.form`
   display: flex;
   flex-direction: column;
   width: 250px;
-  margin: 50px auto 0 auto;
+  margin: 20px auto 0 auto;
+  > h2 {
+    text-align: center;
+  }
 `;
 
 const LivingSelectorContainer = styled.div`
@@ -19,7 +24,7 @@ const TypeSelectorContainer = styled.div`
 `;
 
 
-export default class Form extends React.Component {
+class Form extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -37,13 +42,17 @@ export default class Form extends React.Component {
   handleSubmit = e => {
     e.preventDefault();
     console.log(`You Hit the Add Bounty Button!`);
-    
+    console.log(`Info submitted:`);
+    console.log(this.state);
+
+    this.props.addNewBounty(this.state);
   };
 
   render() {
-    console.log(this.state);
+    // console.log(this.state);
     return (
-      <BountyForm onSubmit={this.handleSubmit}>
+      <BountyForm onSubmit={this.handleSubmit} type={this.props.type}>
+        <h2>Add New Bounty</h2>
         <input
           type='text'
           placeholder='First Name'
@@ -105,3 +114,5 @@ export default class Form extends React.Component {
     );
   };
 };
+
+export default withData(Form);
