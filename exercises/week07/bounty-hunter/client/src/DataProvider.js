@@ -27,7 +27,7 @@ class DataProvider extends React.Component {
       <Provider value={{
         ...this.state,
         getBounties: this.getBounties,
-        
+
       }}>
         {this.props.children}
       </Provider>
@@ -38,7 +38,8 @@ class DataProvider extends React.Component {
 export default DataProvider;
 
 export function withData(Comp) {
-  <Consumer>
-    {value => <Comp {...value}{...props} />}
-  </Consumer>
-}
+  return props =>
+    <Consumer>
+      {value => <Comp {...value}{...props} />}
+    </Consumer>
+};
