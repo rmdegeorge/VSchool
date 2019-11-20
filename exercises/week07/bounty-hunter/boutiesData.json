@@ -5,7 +5,7 @@
     "living": true,
     "bounty-amount": 1000,
     "type": "Sith",
-    "id": "34fa33fa432aqw24qdf32f1ad"
+    "id": "b5950978-1b78-4f89-8fbf-cf83d63cc2f2"
   },
   {
     "first_name": "Darth",
@@ -13,6 +13,14 @@
     "living": false,
     "bounty-amount": 30000,
     "type": "Sith",
-    "id": "34fa33fa432aqw24qdf32f1ad"
+    "id": "714088b9-4d42-418c-8daa-d597280fa2cf"
+  },
+  {
+    "first_name": "Luke",
+    "last_name": "Skywalker",
+    "living": true,
+    "bounty-amount": 120000,
+    "type": "Jedi",
+    "id": "ead6c390-fd42-41d0-8264-2446c2323f03"
   }
 ]
