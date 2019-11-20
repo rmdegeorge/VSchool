@@ -1,0 +1,18 @@
+[
+  {
+    "first_name": "Darth",
+    "last_name": "Maul",
+    "living": true,
+    "bounty-amount": 1000,
+    "type": "Sith",
+    "id": "34fa33fa432aqw24qdf32f1ad"
+  },
+  {
+    "first_name": "Darth",
+    "last_name": "Vader",
+    "living": false,
+    "bounty-amount": 30000,
+    "type": "Sith",
+    "id": "34fa33fa432aqw24qdf32f1ad"
+  }
+]
