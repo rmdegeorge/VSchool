@@ -24,25 +24,55 @@ let todos = [
 ]
 
 app.get('/todo', (req, res) => {
-  console.log(req.query);
+  // console.log(req);
   res.send(todos);
 });
 
 app.post('/todo', (req, res) => {
-  console.log(req.body);
+  // console.log(req.body);
   todos.push({...req.body, _id: uuid()});
   res.send(todos);
 });
 
-app.put('/todo/', (req, res) => {
-  console.log(req);
-  res.send()
+app.put('/todo/:_id', (req, res) => {
+  // console.log(req.params);
+
+  let indexToUpdate = todos.findIndex((todo) => {
+    return todo._id === req.params._id;
+  });
+
+  // console.log(`todo: `)
+  // console.log(todos[indexToUpdate]);
+
+  for (key in todos[indexToUpdate]) {
+    // console.log(`key: ${key}`);
+    // console.log(`req.params[key]: ${req.body[key]}`)
+    // console.log(`todos[indexToUpdate][key]: ${todos[indexToUpdate][key]}`)
+    if (key !== req.body[key]) {
+      todos[indexToUpdate][key] = req.body[key];
+    };
+    todos[indexToUpdate]._id = req.params._id
+  }
+  // console.log(`indexToUpdate: ${indexToUpdate}`);
+
+  // todos[indexToUpdate] = {...req.body, todo._id};
+
+  res.send(todos);
 });
 
-app.delete('/todo', (req, res) => {
-  console.log(req);
+app.delete('/todo/:_id', (req, res) => {
+  // console.log(req);
+  let indexToDelete = todos.findIndex((todo) => {
+    return todo._id === req.params._id;
+  });
+  todos.splice(indexToDelete, 1);
+  res.send(todos);
 });
 
 app.listen(PORT, (req, res) => {
-  console.log(`Server is running on PORT: ${PORT}`);
+  console.log(`
+    *************************************
+    ** Server is running on PORT: ${PORT} **
+    *************************************
+    `);
 })
