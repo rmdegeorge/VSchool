@@ -10,8 +10,8 @@ class DataProvider extends React.Component {
     };
   };
 
-  getBounties = () => {
-    axios.get('/bounty')
+  getAllBounties = () => {
+    axios.get('/bounty/')
     .then(res => {
       this.setState({
         bounties: res.data
@@ -21,7 +21,19 @@ class DataProvider extends React.Component {
       console.log(error);
     });
   };
-
+  addNewBounty = () => {
+    axios.post('/bounty/')
+    .then((res) => {
+      this.setState(prev => {
+        return {
+          bounties: [...prev.bounties, res.data]
+        };
+      });
+    })
+    .catch((error) => {
+      console.log(error);
+    })
+  }
   render() {
     return (
       <Provider value={{
