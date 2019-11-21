@@ -38,7 +38,7 @@ class Form extends React.Component {
       first_name: "",
       last_name: "",
       living: true,
-      type: "",
+      type: "Sith",
 
     };
   }
@@ -94,6 +94,12 @@ class Form extends React.Component {
                 name='living'
                 value={true}
                 onChange={this.handleChange}
+                checked={
+                  this.props.type === 'add'
+                  ?
+                  null
+                  :
+                  this.state.living ? "checked": null}
                 />
               Alive
             </label>
@@ -103,6 +109,12 @@ class Form extends React.Component {
                 name='living'
                 value={false}
                 onChange={this.handleChange}
+                checked={
+                  this.props.type === 'add'
+                  ?
+                  null
+                  :
+                  this.state.living ? null : "checked"}
                 />
               Deceased
             </label>
@@ -114,6 +126,12 @@ class Form extends React.Component {
                 name='type'
                 value="Sith"
                 onChange={this.handleChange}
+                checked={
+                  this.props.type === 'add'
+                  ?
+                  null
+                  :
+                  this.state.type === 'Sith' ? "checked": null}
                 />
               Sith
             </label>
@@ -123,6 +141,12 @@ class Form extends React.Component {
                 name='type'
                 value="Jedi"
                 onChange={this.handleChange}
+                checked={
+                  this.props.type === 'add'
+                  ?
+                  null
+                  :
+                  this.state.type === 'Jedi' ? "checked": null}
                 />
               Jedi
             </label>

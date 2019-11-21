@@ -23,7 +23,7 @@ class BountyList extends React.Component {
     this.props.getAllBounties();
   }
   render() {
-    console.log(this.props.bounties);
+    // console.log(this.props.bounties);
     const displayBounties = this.props.bounties.map((bounty) => <Bounty key={bounty._id} type={"edit"} info={bounty}/>)
 
     return (
