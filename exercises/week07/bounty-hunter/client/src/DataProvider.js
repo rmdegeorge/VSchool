@@ -38,6 +38,19 @@ class DataProvider extends React.Component {
     });
   };
 
+  editBounty = (id, updatedBounty) => {
+    axios.put(`/bounty/${id}`, updatedBounty)
+    .then((res) => {
+      this.setState((prev) => {
+        return {
+          bounties: prev.bounties.map((bounty) => bounty._id == id ? res.data : bounty)
+        }
+      })
+    })
+    .catch((error) => {
+      console.log(error);
+    })
+  }
   deleteBounty = (id) => {
     axios.delete(`/bounty/${id}`)
     .then((res) => {
@@ -59,6 +72,7 @@ class DataProvider extends React.Component {
         getAllBounties: this.getAllBounties,
         addNewBounty: this.addNewBounty,
         deleteBounty: this.deleteBounty,
+        editBounty: this.editBounty,
 
       }}>
         {this.props.children}

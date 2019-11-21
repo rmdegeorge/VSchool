@@ -8,6 +8,7 @@ const BountyForm = styled.form`
   flex-direction: column;
   width: 250px;
   margin: 20px auto 0 auto;
+
   > h2 {
     text-align: center;
   }
@@ -41,18 +42,31 @@ class Form extends React.Component {
 
   handleSubmit = e => {
     e.preventDefault();
-    console.log(`You Hit the Add Bounty Button!`);
-    console.log(`Info submitted:`);
-    console.log(this.state);
 
-    this.props.addNewBounty(this.state);
+    if (this.props.type === 'add') {
+      this.props.addNewBounty(this.state)
+    } else {
+      this.props.editBounty(this.props.bountyInfo._id, this.state);
+      this.props.toggleEdit();
+    };
   };
+  componentDidMount() {
+    if (this.props.type === 'edit'){
+      let {first_name, last_name, living, type} = this.props.bountyInfo;
+      this.setState({
+        first_name: first_name,
+        last_name: last_name,
+        living: living,
+        type: type,
+      });
+    }
 
+  };
   render() {
     // console.log(this.state);
     return (
       <BountyForm onSubmit={this.handleSubmit} type={this.props.type}>
-        <h2>Add New Bounty</h2>
+        {this.props.type !== 'edit' ? <h2>Add New Bounty</h2> : null}
         <input
           type='text'
           placeholder='First Name'
@@ -108,7 +122,7 @@ class Form extends React.Component {
             </label>
           </TypeSelectorContainer>
           <button type="submit">
-            Add Bounty
+            {this.props.type === "edit" ? "Save Changes" : "Add Bounty"}
           </button>
       </BountyForm>
     );
