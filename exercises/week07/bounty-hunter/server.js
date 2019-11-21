@@ -2,13 +2,19 @@
 
 const express = require('express');
 const app = express();
+const mongoose = require('mongoose')
+
 
 const PORT = process.env.PORT || 3000;
 
 // const database = require('./bountiesData.json');
-// app.use(express.json());
+app.use(express.json());
 
 app.use("/bounty", require("./routes/bountyRoutes"));
+
+mongoose.connect('mongodb://localhost:27017/bounties', {useNewUrlParser: true}).then(() => {
+  console.log('connected to MongoDB')
+})
 
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
