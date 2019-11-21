@@ -2,11 +2,13 @@
 
 const express = require("express");
 const bountyRouter = express.Router();
+
 const uuid = require('uuid');
-const database = require('./bountiesData.json');
+
+const database = require('../bountiesData.json');
 bountyRouter.use(express.json());
 
-bountyRouter.route('/bounty')
+bountyRouter.route('/')
   .get((req,res) => {
     res.send(database);
   })
@@ -16,7 +18,7 @@ bountyRouter.route('/bounty')
     res.send(req.body);
   });
 
-bountyRouter.route('/bounty/:_id')
+bountyRouter.route('/:_id')
   .get((req,res) => {
     const foundBounty = database.find(bounty => bounty._id == req.params._id);
     res.send(foundBounty);

@@ -1,15 +1,19 @@
 // server.js
 
 const express = require('express');
-const uuid = require('uuid');
 const app = express();
 
 const PORT = process.env.PORT || 3000;
 
-const database = require('./bountiesData.json');
-app.use(express.json());
+// const database = require('./bountiesData.json');
+// app.use(express.json());
 
 app.use("/bounty", require("./routes/bountyRoutes"));
+
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
+});
+
 
 // app.get('/bounty', (req, res) => {
 //   res.send(database);
@@ -39,7 +43,3 @@ app.use("/bounty", require("./routes/bountyRoutes"));
 //   database.splice(index, 1);
 //   res.send(`Successfully deleted Bounty`);
 // });
-
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
-});
