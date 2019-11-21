@@ -5,7 +5,7 @@ import {withData} from './DataProvider';
 import Form from './Form';
 
 const BountyContainer = styled.div`
-  padding: 20px;
+  padding: 10px;
   border: 2px solid #000000;
   border-radius: 25px;
   width: 100%;

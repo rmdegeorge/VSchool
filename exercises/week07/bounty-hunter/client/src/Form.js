@@ -6,8 +6,14 @@ import {withData} from './DataProvider';
 const BountyForm = styled.form`
   display: flex;
   flex-direction: column;
-  width: 250px;
   margin: 20px auto 0 auto;
+
+  ${props => props.type === "add"
+    ?
+    `width: 250px;`
+    :
+    `width: 100%;`
+  }
 
   > h2 {
     text-align: center;
