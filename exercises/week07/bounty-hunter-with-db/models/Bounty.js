@@ -7,8 +7,14 @@ const bountySchema = new Schema({
     required: true
   },
   last_name: String,
-  living: Boolean,
-  type: String,
+  living: {
+    type: String,
+    enum: ["Alive", "Dead"]
+  },
+  type: {
+    type: String,
+    enum: ["Sith", "Jedi"]
+  },
 })
 
 module.exports = mongoose.model("Bounty", bountySchema)

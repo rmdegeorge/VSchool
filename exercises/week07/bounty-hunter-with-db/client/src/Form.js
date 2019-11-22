@@ -37,16 +37,16 @@ class Form extends React.Component {
     this.state = {
       first_name: "",
       last_name: "",
-      living: Boolean,
+      living: String,
       type: String,
 
     };
   }
   handleChange = e => {
-    e.preventDefault();
     this.setState({[e.target.name]: e.target.value});
-    console.log(`~~~~~~after change current state:~~~~~~`);
-    console.log(this.state);
+    console.log(`~~~~~~e.target.value:~~~~~~`);
+
+    console.log(e.target.value);
   };
 
   handleSubmit = e => {
@@ -72,7 +72,7 @@ class Form extends React.Component {
 
   };
   render() {
-    // console.log(this.state);
+    console.log(this.state);
     return (
       <BountyForm onSubmit={this.handleSubmit} type={this.props.type}>
         {this.props.type !== 'edit' ? <h2>Add New Bounty</h2> : null}
@@ -97,14 +97,14 @@ class Form extends React.Component {
             <input
               type='radio'
               name='living'
-              value={true}
+              value="Alive"
               onChange={this.handleChange}
               checked={
                 this.props.type === 'add'
                 ?
-                false
+                null
                 :
-                this.state.living? true : false}
+                this.state.living === "Alive" ? true : false}
             />
             Alive
           </label>
@@ -112,14 +112,14 @@ class Form extends React.Component {
             <input
               type='radio'
               name='living'
-              value={false}
+              value="Dead"
               onChange={this.handleChange}
               checked={
                 this.props.type === 'add'
                 ?
-                false
+                null
                 :
-                this.state.living? false : true}
+                this.state.living === "Dead" ? true : false}
               />
             Deceased
           </label>
@@ -136,7 +136,7 @@ class Form extends React.Component {
               checked={
                 this.props.type === 'add'
                 ?
-                false
+                null
                 :
                 this.state.type === 'Sith' ? true : false}
               />
@@ -151,7 +151,7 @@ class Form extends React.Component {
               checked={
                 this.props.type === 'add'
                 ?
-                false
+                null
                 :
                 this.state.type === 'Jedi' ? true : false}
               />

@@ -54,7 +54,7 @@ class Bounty extends React.Component {
             {`Type: ${type}`}
           </div>
           <div>
-            {`Living: ${living ? "Alive" : "Deceased"}`}
+            {`Dead or Alive: ${living}`}
           </div>
           <button onClick={this.toggleEdit}>Edit</button>
           <button onClick={() => this.props.deleteBounty(_id)}>Delete</button>
