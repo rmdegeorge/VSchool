@@ -20,8 +20,8 @@ class Bounty extends React.Component {
   };
 
   toggleEdit = () => {
-    console.log(`You toggled Edit`)
-    console.log(this.state)
+    // console.log(`You toggled Edit`)
+    // console.log(this.state)
     this.setState((prev) => {
       return {
         editToggled: !prev.editToggled

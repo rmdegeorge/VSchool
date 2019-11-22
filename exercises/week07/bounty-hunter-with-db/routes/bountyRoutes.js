@@ -23,9 +23,20 @@ bountyRouter.route('/:_id')
   .delete((req,res) => {
     Bounty.findOneAndDelete(
       {_id: req.params._id},
-      (error, place) => {
+      (error, bounty) => {
         if (error) return res.status(500).send(error);
-        return res.status(200).send(place);
+        return res.status(200).send(bounty);
+      }
+    )
+  })
+  .put((req,res) => {
+    Bounty.findOneAndUpdate(
+      {_id: req.params._id},
+      req.body,
+      {new: true},
+      (error, bounty) => {
+        if (error) return res.status(500).send(error);
+        return res.status(200).send(bounty);
       }
     )
   })

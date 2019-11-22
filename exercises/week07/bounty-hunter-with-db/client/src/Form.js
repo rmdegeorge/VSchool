@@ -37,13 +37,16 @@ class Form extends React.Component {
     this.state = {
       first_name: "",
       last_name: "",
-      living: true,
-      type: "Sith",
+      living: Boolean,
+      type: String,
 
     };
   }
   handleChange = e => {
+    e.preventDefault();
     this.setState({[e.target.name]: e.target.value});
+    console.log(`~~~~~~after change current state:~~~~~~`);
+    console.log(this.state);
   };
 
   handleSubmit = e => {
@@ -80,80 +83,84 @@ class Form extends React.Component {
           value={this.state.first_name}
           onChange={this.handleChange}
           />
-          <input
-            type='text'
-            placeholder='Last Name'
-            name='last_name'
-            value={this.state.last_name}
-            onChange={this.handleChange}
+        <input
+          type='text'
+          placeholder='Last Name'
+          name='last_name'
+          value={this.state.last_name}
+          onChange={this.handleChange}
+          />
+
+
+        <LivingSelectorContainer>
+          <label>
+            <input
+              type='radio'
+              name='living'
+              value={true}
+              onChange={this.handleChange}
+              checked={
+                this.props.type === 'add'
+                ?
+                false
+                :
+                this.state.living? true : false}
             />
-          <LivingSelectorContainer>
-            <label>
-              <input
-                type='radio'
-                name='living'
-                value={true}
-                onChange={this.handleChange}
-                checked={
-                  this.props.type === 'add'
-                  ?
-                  null
-                  :
-                  this.state.living ? "checked": null}
-                />
-              Alive
-            </label>
-            <label>
-              <input
-                type='radio'
-                name='living'
-                value={false}
-                onChange={this.handleChange}
-                checked={
-                  this.props.type === 'add'
-                  ?
-                  null
-                  :
-                  this.state.living ? null : "checked"}
-                />
-              Deceased
-            </label>
-          </LivingSelectorContainer>
-          <TypeSelectorContainer>
-            <label>
-              <input
-                type='radio'
-                name='type'
-                value="Sith"
-                onChange={this.handleChange}
-                checked={
-                  this.props.type === 'add'
-                  ?
-                  null
-                  :
-                  this.state.type === 'Sith' ? "checked": null}
-                />
-              Sith
-            </label>
-            <label>
-              <input
-                type='radio'
-                name='type'
-                value="Jedi"
-                onChange={this.handleChange}
-                checked={
-                  this.props.type === 'add'
-                  ?
-                  null
-                  :
-                  this.state.type === 'Jedi' ? "checked": null}
-                />
-              Jedi
-            </label>
-          </TypeSelectorContainer>
-          <button type="submit">
-            {this.props.type === "edit" ? "Save Changes" : "Add Bounty"}
-          </button>
+            Alive
+          </label>
+          <label>
+            <input
+              type='radio'
+              name='living'
+              value={false}
+              onChange={this.handleChange}
+              checked={
+                this.props.type === 'add'
+                ?
+                false
+                :
+                this.state.living? false : true}
+              />
+            Deceased
+          </label>
+        </LivingSelectorContainer>
+
+
+        <TypeSelectorContainer>
+          <label>
+            <input
+              type='radio'
+              name='type'
+              value="Sith"
+              onChange={this.handleChange}
+              checked={
+                this.props.type === 'add'
+                ?
+                false
+                :
+                this.state.type === 'Sith' ? true : false}
+              />
+            Sith
+          </label>
+          <label>
+            <input
+              type='radio'
+              name='type'
+              value="Jedi"
+              onChange={this.handleChange}
+              checked={
+                this.props.type === 'add'
+                ?
+                false
+                :
+                this.state.type === 'Jedi' ? true : false}
+              />
+            Jedi
+          </label>
+        </TypeSelectorContainer>
+        <button type="submit">
+          {this.props.type === "edit" ? "Save Changes" : "Add Bounty"}
+        </button>
       </BountyForm>
     );
   };
