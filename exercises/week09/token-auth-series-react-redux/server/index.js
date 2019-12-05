@@ -2,6 +2,7 @@ const express = require("express");
 const app = express();
 const morgan = require("morgan");
 const mongoose = require("mongoose");
+const expressJwt = require("express-jwt")
 const bodyParser = require("body-parser");
 const PORT = process.env.PORT || 5000;
 
@@ -20,7 +21,9 @@ mongoose.connect("mongodb://localhost/todo-auth-example",
     }
 );
 
-app.use("/todo", require("./routes/todo.js"));
+app.use('/api', jexpressJwt({secret: process.env.SECRET}));
+app.use('/auth', require('./routes/auth'));
+app.use("/api/todo", require("./routes/todo.js"));
 
 app.listen(PORT, () => {
     console.log(`[+] Starting server on port ${PORT}`);
