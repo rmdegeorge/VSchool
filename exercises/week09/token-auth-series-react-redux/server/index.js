@@ -21,7 +21,7 @@ mongoose.connect("mongodb://localhost/todo-auth-example",
     }
 );
 
-app.use('/api', jexpressJwt({secret: process.env.SECRET}));
+app.use('/api', expressJwt({secret: process.env.SECRET}));
 app.use('/auth', require('./routes/auth'));
 app.use("/api/todo", require("./routes/todo.js"));
 
