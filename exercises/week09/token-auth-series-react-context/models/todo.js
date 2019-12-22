@@ -12,9 +12,9 @@ const todoSchema = new Schema({
     },
     user: {
         type: Schema.Types.ObjectId,
-        ref: 'User',
+        ref: "User",
         required: true
     }
 });
 
-module.exports = mongoose.model("Todo", todoSchema); 
+module.exports = mongoose.model("Todo", todoSchema);
